@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antony Shane — Cybersecurity Researcher · AI/ML Engineer · Entrepreneur</title>
+  <meta name="description" content="Antony Shane — Offensive Security, AI/ML Engineering, Entrepreneur. Founder of Rapture Twelve Pvt Ltd." />
+
+  <!--
+    Fonts
+    ──────────────────────────────────────────────
+    DM Serif Display  → editorial, high-contrast serif for all headings
+    IBM Plex Mono     → technical, authoritative mono for body/UI
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- GSAP + ScrollTrigger (loaded before main.js via defer ordering) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- Custom cursor (hidden on touch devices via CSS) -->
+  <div id="cursor-dot"  aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Mobile navigation overlay -->
+  <div id="mobile-nav" aria-label="Mobile navigation" role="dialog" aria-modal="true" hidden>
+    <button class="mobile-close" id="close-mobile-nav" aria-label="Close menu">✕</button>
+    <a href="#about"        class="mobile-nav-link">About</a>
+    <a href="#experience"   class="mobile-nav-link">Experience</a>
+    <a href="#projects"     class="mobile-nav-link">Projects</a>
+    <a href="#skills"       class="mobile-nav-link">Skills</a>
+    <a href="#achievements" class="mobile-nav-link">Awards</a>
+    <a href="#contact"      class="mobile-nav-link">Contact</a>
+  </div>
+
+  <!-- ───────────────────────────────────────────────────
+       NAV
+  ─────────────────────────────────────────────────── -->
+  <nav id="nav" role="navigation" aria-label="Primary navigation">
+    <div class="nav-logo">AS<span class="accent-dot">.</span></div>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#achievements">Awards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="mailto:antonyshane@rapturetwelve.com" class="nav-cta">Get in touch</a>
+
+    <button class="nav-burger" id="mobile-nav-btn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ───────────────────────────────────────────────────
+       ① HERO
+  ─────────────────────────────────────────────────── -->
+  <section id="hero" aria-label="Introduction">
+    <div class="hero-inner">
+
+      <div class="hero-left">
+        <p class="hero-eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Available for select engagements &nbsp;·&nbsp; Rourkela, India
+        </p>
+
+        <h1 class="hero-name">
+          <span class="line-wrap"><span class="inner">Antony</span></span>
+          <span class="line-wrap accent-line"><span class="inner">Shane</span></span>
+        </h1>
+
+        <p class="hero-tagline">
+          I build things that<br />
+          <span class="word-swap" id="word-swap">break systems.</span>
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="#contact" class="btn btn-primary" data-magnetic>
+            <span class="btn-text">Get in touch</span>
+            <span class="btn-icon" aria-hidden="true">↗</span>
+            <span class="btn-fill" aria-hidden="true"></span>
+          </a>
+          <a href="#projects" class="btn btn-ghost" data-magnetic>
+            <span class="btn-text">View work</span>
+            <span class="btn-icon" aria-hidden="true">↓</span>
+          </a>
+        </div>
+
+        <div class="hero-stats" aria-label="Key statistics">
+          <div class="stat-item">
+            <span class="stat-num counter" data-target="11">0</span>
+            <span class="stat-label">Projects shipped</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num counter" data-target="25">0</span>
+            <span class="stat-label">Team members led</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">3<sup>+</sup></span>
+            <span class="stat-label">Active ventures</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <div class="profile-frame">
+          <!--
+            TODO: replace with real image ↓
+            <img src="assets/profile.jpg" alt="Antony Shane" />
+          -->
+          <div class="photo-placeholder">
+            <span class="ph-label">[ profile photo ]</span>
+            <span class="ph-sub">antonyshane.jpg</span>
+            <div class="scan-line"></div>
+          </div>
+          <div class="frame-corner" aria-hidden="true"></div>
+        </div>
+        <p class="hero-caption">B.Tech · NIT Rourkela · 2027</p>
+      </div>
+
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────────────────
+       MARQUEE
+  ─────────────────────────────────────────────────── -->
+  <div class="marquee-band" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="m-item">Offensive Security <em>✦</em></span>
+      <span class="m-item">Red Teaming <em>✦</em></span>
+      <span class="m-item">AI / ML Engineering <em>✦</em></span>
+      <span class="m-item">Malware Research <em>✦</em></span>
+      <span class="m-item">Entrepreneurship <em>✦</em></span>
+      <span class="m-item">Digital Forensics <em>✦</em></span>
+      <span class="m-item">Vulnerability Research <em>✦</em></span>
+      <span class="m-item">Penetration Testing <em>✦</em></span>
+      <!-- Duplicate set for seamless CSS loop -->
+      <span class="m-item">Offensive Security <em>✦</em></span>
+      <span class="m-item">Red Teaming <em>✦</em></span>
+      <span class="m-item">AI / ML Engineering <em>✦</em></span>
+      <span class="m-item">Malware Research <em>✦</em></span>
+      <span class="m-item">Entrepreneurship <em>✦</em></span>
+      <span class="m-item">Digital Forensics <em>✦</em></span>
+      <span class="m-item">Vulnerability Research <em>✦</em></span>
+      <span class="m-item">Penetration Testing <em>✦</em></span>
+    </div>
+  </div>
+
+  <!-- ───────────────────────────────────────────────────
+       ② ABOUT
+  ─────────────────────────────────────────────────── -->
+  <section id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-left">
+          <p class="section-label" aria-hidden="true">About</p>
+
+          <!--
+            TODO: replace with real image ↓
+            <img src="assets/secondary.jpg" alt="Antony Shane, secondary" />
+          -->
+          <div class="secondary-photo" role="img" aria-label="Photo placeholder">
+            <span>[ photo ]</span>
+          </div>
+
+          <div class="edu-block">
+            <div class="edu-item">
+              <div>
+                <p class="edu-deg">B.Tech — Metallurgical &amp; Materials Engineering</p>
+                <p class="edu-inst">NIT Rourkela · 3rd Year</p>
+              </div>
+              <p class="edu-year">2023–2027</p>
+            </div>
+            <div class="edu-item">
+              <div>
+                <p class="edu-deg">Senior Secondary</p>
+                <p class="edu-inst">Sri Chaitanya IIT Academy</p>
+              </div>
+              <p class="edu-year">2021–2023</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-body">
+          <h2 id="about-title" class="section-title reveal-title">
+            <span class="line-wrap"><span class="inner">Curiosity</span></span>
+            <span class="line-wrap"><span class="inner">weaponized.</span></span>
+          </h2>
+
+          <p class="about-p fade-in">
+            Started with <strong>offensive security</strong> purely out of curiosity — writing exploits,
+            probing systems, seeing exactly how far they could be pushed. At some point the curiosity
+            shifted: <span class="hl">those same skills could protect people.</span>
+          </p>
+
+          <p class="about-p fade-in">
+            Now running <strong>Rapture Twelve Pvt Ltd</strong>, a DPIIT-certified cybersecurity startup, and
+            co-founding <strong>Zharnyx</strong> — a cybersecurity EdTech — while finishing a B.Tech at NIT
+            Rourkela and conducting <strong>vulnerability research under India's National Security Council
+            Secretariat (NSCS).</strong>
+          </p>
+
+          <p class="about-p fade-in">
+            Philosophy: <span class="hl">to truly defend a system, you must understand how to break it.</span>
+            That curiosity gets channelled into AI-powered security tooling, open-source contributions,
+            and building things that matter.
+          </p>
+
+          <div class="about-tags fade-in">
+            <span class="tag">Founder &amp; CEO</span>
+            <span class="tag">Red Teamer</span>
+            <span class="tag">AI/ML Engineer</span>
+            <span class="tag">Security Researcher</span>
+            <span class="tag">CTF Player</span>
+            <span class="tag">NIT Rourkela</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- ───────────────────────────────────────────────────
+       ③ EXPERIENCE
+  ─────────────────────────────────────────────────── -->
+  <section id="experience" aria-labelledby="exp-title">
+    <div class="container">
+      <header class="section-header">
+        <div>
+          <p class="section-label">Experience</p>
+          <h2 id="exp-title" class="section-title reveal-title">
+            <span class="line-wrap"><span class="inner">Where I've</span></span>
+            <span class="line-wrap"><span class="inner">built things.</span></span>
+          </h2>
+        </div>
+      </header>
+
+      <div class="exp-list">
+
+        <article class="exp-item fade-in">
+          <div class="exp-meta">
+            <p class="exp-date">2025 — Present</p>
+            <p class="exp-company">Rapture Twelve Pvt Ltd</p>
+            <p class="exp-location">DPIIT Certified · India</p>
+            <span class="exp-badge">Founder</span>
+          </div>
+          <div class="exp-body">
+            <h3 class="exp-role">Founder &amp; CEO</h3>
+            <ul class="exp-bullets">
+              <li>Launched and scaled from inception; defined technical roadmap and strategic vision</li>
+              <li>Built and led a <strong>25+ member cybersecurity team</strong> across red teaming, dev, and research</li>
+              <li>Delivered <strong>11+ national and international projects</strong> within 7 months of incorporation</li>
+              <li>Developed proprietary AI-driven cybersecurity products targeting global enterprise expansion</li>
+              <li>Leads red team ops, pentesting engagements, malware engineering, and autonomous security tooling</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item fade-in">
+          <div class="exp-meta">
+            <p class="exp-date">2026 — Present</p>
+            <p class="exp-company">Zharnyx Pvt Ltd</p>
+            <p class="exp-location">Coimbatore, Tamil Nadu</p>
+            <span class="exp-badge">Co-Founder</span>
+          </div>
+          <div class="exp-body">
+            <h3 class="exp-role">Co-Founder — CyberSec EdTech</h3>
+            <ul class="exp-bullets">
+              <li>Architected end-to-end technical development and full infrastructure deployment</li>
+              <li>Designed hybrid practical-theoretical training ecosystem with real-world security simulations</li>
+              <li>Building the next generation of security practitioners through adversarial labs</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item fade-in">
+          <div class="exp-meta">
+            <p class="exp-date">2025 — Present</p>
+            <p class="exp-company">NIT Rourkela</p>
+            <p class="exp-location">Advisor: Dr. D.P. Mohapatra</p>
+            <span class="exp-badge">Research</span>
+          </div>
+          <div class="exp-body">
+            <h3 class="exp-role">Undergraduate Research Associate</h3>
+            <ul class="exp-bullets">
+              <li>Vulnerability research under the <strong>National Security Council Secretariat (NSCS), India</strong></li>
+              <li>Adversarial modeling simulation and AI-driven defense system development</li>
+              <li>Targeting SCI-indexed journals and IEEE security conference tracks</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item fade-in">
+          <div class="exp-meta">
+            <p class="exp-date">May – Jul 2025</p>
+            <p class="exp-company">Briskinfosec Technology</p>
+            <p class="exp-location">Chennai, Tamil Nadu</p>
+            <span class="exp-badge">Internship</span>
+          </div>
+          <div class="exp-body">
+            <h3 class="exp-role">Cybersecurity Engineer (Intern)</h3>
+            <ul class="exp-bullets">
+              <li>Red teaming and digital forensic analysis on live ransomware attack scenarios</li>
+              <li>Built AI tools for automated source code review, EDR evasion, and autonomous pentesting</li>
+              <li>Conducted full cybersecurity training seminar for an enterprise industry client</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- ───────────────────────────────────────────────────
+       ④ PROJECTS
+  ─────────────────────────────────────────────────── -->
+  <section id="projects" aria-labelledby="proj-title">
+    <div class="container">
+      <header class="section-header">
+        <div>
+          <p class="section-label">Selected Projects</p>
+          <h2 id="proj-title" class="section-title reveal-title">
+            <span class="line-wrap"><span class="inner">Things I've</span></span>
+            <span class="line-wrap"><span class="inner">shipped.</span></span>
+          </h2>
+        </div>
+        <p class="section-aside">From research prototypes<br />to production security tooling.</p>
+      </header>
+
+      <div class="projects-grid">
+
+        <!-- P1 — featured (2-col span) -->
+        <article class="project-card featured fade-in">
+          <!--
+            TODO: replace with real image ↓
+            <img src="assets/projects/ai-pentest.jpg" alt="Autonomous AI Pentesting Framework" />
+          -->
+          <div class="proj-img">
+            <div class="proj-grid-bg" aria-hidden="true"></div>
+            <span>[ project screenshot ]</span>
+          </div>
+          <div class="proj-info">
+            <p class="proj-num">01 / 2025</p>
+            <h3 class="proj-title">Autonomous AI-Driven Penetration Testing Framework</h3>
+            <p class="proj-desc">
+              Full attack lifecycle automation: recon → vulnerability assessment → exploit generation →
+              active exploitation. LLM agents with feedback-driven loops analyzing status codes,
+              timing anomalies, and error patterns — operating at machine speed.
+            </p>
+            <div class="proj-tags">
+              <span>Python</span><span>LLM Agents</span><span>AI Workflow</span><span>Automated Exploitation</span>
+            </div>
+            <span class="proj-link">View details <span class="proj-arrow">→</span></span>
+          </div>
+        </article>
+
+        <!-- P2 — WIP -->
+        <article class="project-card fade-in">
+          <span class="wip-badge">Research · In Progress</span>
+          <!--
+            TODO: replace with real image ↓
+            <img src="assets/projects/adaptive-malware.jpg" alt="Adaptive Malware Evolution Framework" />
+          -->
+          <div class="proj-img">
+            <div class="proj-grid-bg" aria-hidden="true"></div>
+            <span>[ project screenshot ]</span>
+          </div>
+          <div class="proj-info">
+            <p class="proj-num">02 / 2026</p>
+            <h3 class="proj-title">Adaptive Malware Evolution Framework</h3>
+            <p class="proj-desc">
+              Real-time adaptive malware with dynamic code mutation via EDR telemetry feedback.
+              Memetic algorithms + LLM-guided strategy selection. Targeting SCI journals &amp; IEEE conferences.
+            </p>
+            <div class="proj-tags">
+              <span>Python</span><span>Adversarial ML</span><span>EDR/XDR</span><span>Research</span>
+            </div>
+            <span class="proj-link">In progress <span class="proj-arrow">→</span></span>
+          </div>
+        </article>
+
+        <!-- P3 -->
+        <article class="project-card fade-in">
+          <!--
+            TODO: replace with real image ↓
+            <img src="assets/projects/vuln-detection.jpg" alt="Vulnerability Detection via Source Code Analysis" />
+          -->
+          <div class="proj-img">
+            <div class="proj-grid-bg" aria-hidden="true"></div>
+            <span>[ project screenshot ]</span>
+          </div>
+          <div class="proj-info">
+            <p class="proj-num">03</p>
+            <h3 class="proj-title">Vulnerability Detection via Source Code Analysis</h3>
+            <p class="proj-desc">
+              AI-powered static analysis: ML models, pattern recognition, semantic analysis.
+              Auto-classifies vulns, assigns risk scores, generates remediation reports.
+            </p>
+            <div class="proj-tags">
+              <span>Python</span><span>Static Analysis</span><span>AI/ML</span><span>Security</span>
+            </div>
+            <span class="proj-link">View details <span class="proj-arrow">→</span></span>
+          </div>
+        </article>
+
+        <!-- P4 -->
+        <article class="project-card fade-in">
+          <!--
+            TODO: replace with real image ↓
+            <img src="assets/projects/vishing.jpg" alt="Real-Time Vishing Detection System" />
+          -->
+          <div class="proj-img">
+            <div class="proj-grid-bg" aria-hidden="true"></div>
+            <span>[ project screenshot ]</span>
+          </div>
+          <div class="proj-info">
+            <p class="proj-num">04</p>
+            <h3 class="proj-title">Real-Time Vishing Detection System</h3>
+            <p class="proj-desc">
+              Fine-tuned LLM transcript analyzer, emotion detection, voice pattern analysis, acoustic
+              classification. Custom VoIP server, GPU-accelerated inference, mobile integration.
+            </p>
+            <div class="proj-tags">
+              <span>Python</span><span>LLM</span><span>Mobile App</span><span>AI/ML</span>
+            </div>
+            <span class="proj-link">View details <span class="proj-arrow">→</span></span>
+          </div>
+        </article>
+
+        <!-- P5 -->
+        <article class="project-card fade-in">
+          <!--
+            TODO: replace with real image ↓
+            <img src="assets/projects/threat-platform.jpg" alt="Threat Detection Platform" />
+          -->
+          <div class="proj-img">
+            <div class="proj-grid-bg" aria-hidden="true"></div>
+            <span>[ project screenshot ]</span>
+          </div>
+          <div class="proj-info">
+            <p class="proj-num">05</p>
+            <h3 class="proj-title">Intelligent Threat Detection &amp; Response Platform</h3>
+            <p class="proj-desc">
+              Ensemble: Random Forest, XGBoost, LSTM, CNN + isolation forests.
+              MITRE ATT&amp;CK integration, automated incident response, real-time SOC dashboard.
+            </p>
+            <div class="proj-tags">
+              <span>Deep Learning</span><span>Ensemble Models</span><span>SOC</span><span>Real-time</span>
+            </div>
+            <span class="proj-link">View details <span class="proj-arrow">→</span></span>
+          </div>
+        </article>
+
+        <!-- P6 -->
+        <article class="project-card fade-in">
+          <!--
+            TODO: replace with real image ↓
+            <img src="assets/projects/inventory.jpg" alt="Enterprise Inventory System" />
+          -->
+          <div class="proj-img">
+            <div class="proj-grid-bg" aria-hidden="true"></div>
+            <span>[ project screenshot ]</span>
+          </div>
+          <div class="proj-info">
+            <p class="proj-num">06</p>
+            <h3 class="proj-title">Enterprise Inventory &amp; Billing Management System</h3>
+            <p class="proj-desc">
+              Full-stack enterprise app: multi-user roles, supplier management, payment processing,
+              comprehensive audit trails. Built for production-scale operations.
+            </p>
+            <div class="proj-tags">
+              <span>Full-Stack</span><span>Enterprise</span><span>Database</span><span>Analytics</span>
+            </div>
+            <span class="proj-link">View details <span class="proj-arrow">→</span></span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- ───────────────────────────────────────────────────
+       ⑤ SKILLS
+  ─────────────────────────────────────────────────── -->
+  <section id="skills" aria-labelledby="skills-title">
+    <div class="container">
+      <p class="section-label">Technical Arsenal</p>
+      <h2 id="skills-title" class="section-title reveal-title">
+        <span class="line-wrap"><span class="inner">Stack &amp;</span></span>
+        <span class="line-wrap"><span class="inner">Tooling.</span></span>
+      </h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-group fade-in">
+          <p class="sg-icon" aria-hidden="true">⌨</p>
+          <p class="sg-name">Languages</p>
+          <div class="sg-pills">
+            <span>Python</span><span>C++</span><span>Kotlin</span><span>JavaScript</span><span>SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group fade-in">
+          <p class="sg-icon" aria-hidden="true">⬡</p>
+          <p class="sg-name">AI Frameworks &amp; APIs</p>
+          <div class="sg-pills">
+            <span>OpenAI API</span><span>LangChain</span><span>LlamaIndex</span>
+            <span>Hugging Face</span><span>Ollama</span><span>ONNX</span>
+            <span>TensorRT</span><span>OpenVINO</span>
+          </div>
+        </div>
+
+        <div class="skill-group fade-in">
+          <p class="sg-icon" aria-hidden="true">◎</p>
+          <p class="sg-name">ML &amp; MLOps</p>
+          <div class="sg-pills">
+            <span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>scikit-learn</span>
+            <span>W&amp;B</span><span>MLflow</span><span>IBM ART</span><span>Counterfit</span>
+          </div>
+        </div>
+
+        <div class="skill-group fade-in">
+          <p class="sg-icon" aria-hidden="true">⚔</p>
+          <p class="sg-name">Security Tooling</p>
+          <div class="sg-pills">
+            <span>Burp Suite</span><span>Sliver C2</span><span>Metasploit</span><span>Frida</span>
+            <span>Ghidra</span><span>JADX</span><span>MobSF</span><span>nuclei</span>
+            <span>sqlmap</span><span>Wireshark</span><span>ffuf</span>
+          </div>
+        </div>
+
+        <div class="skill-group fade-in">
+          <p class="sg-icon" aria-hidden="true">☁</p>
+          <p class="sg-name">DevOps &amp; Cloud</p>
+          <div class="sg-pills">
+            <span>Docker</span><span>AWS SageMaker</span><span>AWS EC2</span><span>Git</span><span>CI/CD</span>
+          </div>
+        </div>
+
+        <div class="skill-group fade-in">
+          <p class="sg-icon" aria-hidden="true">◈</p>
+          <p class="sg-name">Research Focus</p>
+          <div class="sg-pills">
+            <span>Adversarial ML</span><span>EDR Evasion</span><span>Memetic Algorithms</span>
+            <span>LLM Security</span><span>Static Analysis</span><span>Exploit Dev</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="domains-strip fade-in">
+        <div class="d-item"><span class="d-dot" aria-hidden="true"></span>VAPT</div>
+        <div class="d-item"><span class="d-dot" aria-hidden="true"></span>Red Teaming</div>
+        <div class="d-item"><span class="d-dot" aria-hidden="true"></span>Malware Research</div>
+        <div class="d-item"><span class="d-dot" aria-hidden="true"></span>Digital Forensics</div>
+        <div class="d-item"><span class="d-dot" aria-hidden="true"></span>AI/ML Engineering</div>
+        <div class="d-item"><span class="d-dot" aria-hidden="true"></span>Full-Stack Development</div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- ───────────────────────────────────────────────────
+       ⑥ ACHIEVEMENTS & CERTIFICATIONS
+  ─────────────────────────────────────────────────── -->
+  <section id="achievements" aria-labelledby="ach-title">
+    <div class="container">
+      <p class="section-label">Recognition</p>
+      <h2 id="ach-title" class="section-title reveal-title">
+        <span class="line-wrap"><span class="inner">Awards &amp;</span></span>
+        <span class="line-wrap"><span class="inner">Certifications.</span></span>
+      </h2>
+
+      <div class="ach-grid">
+
+        <div class="ach-col fade-in">
+          <p class="ach-col-title">Achievements</p>
+
+          <div class="ach-item">
+            <div class="ach-icon" aria-hidden="true">🏆</div>
+            <div class="ach-body">
+              <p class="ach-name">PSB Inter-NIT National Cybersecurity Hackathon — Winner</p>
+              <p class="ach-sub">600+ participants · National Final · 2025</p>
+              <span class="badge b-done">Completed</span>
+            </div>
+          </div>
+
+          <div class="ach-item">
+            <div class="ach-icon" aria-hidden="true">⚑</div>
+            <div class="ach-body">
+              <p class="ach-name">CTF Competitions — Multiple Podium Finishes</p>
+              <p class="ach-sub">National &amp; international · 2024–Present</p>
+              <span class="badge b-done">Ongoing</span>
+            </div>
+          </div>
+
+          <div class="ach-item">
+            <div class="ach-icon" aria-hidden="true">◉</div>
+            <div class="ach-body">
+              <p class="ach-name">Responsible Vulnerability Disclosure</p>
+              <p class="ach-sub">Multiple critical CVEs in live production environments · 2024–Present</p>
+              <span class="badge b-done">Ongoing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ach-col fade-in">
+          <p class="ach-col-title">Certifications</p>
+
+          <div class="ach-item">
+            <div class="ach-icon" aria-hidden="true">◻</div>
+            <div class="ach-body">
+              <p class="ach-name">OSCP — Offensive Security Certified Professional</p>
+              <p class="ach-sub">Offensive Security · Exam preparation in progress</p>
+              <span class="badge b-wip">In Progress</span>
+            </div>
+          </div>
+
+          <div class="ach-item">
+            <div class="ach-icon" aria-hidden="true">◻</div>
+            <div class="ach-body">
+              <p class="ach-name">Google Cybersecurity Professional Certificate</p>
+              <p class="ach-sub">Google / Coursera</p>
+              <span class="badge b-done">Completed</span>
+            </div>
+          </div>
+
+          <div class="ach-item">
+            <div class="ach-icon" aria-hidden="true">◻</div>
+            <div class="ach-body">
+              <p class="ach-name">Network Security &amp; Cryptography</p>
+              <p class="ach-sub">NPTEL · IIT Kharagpur</p>
+              <span class="badge b-done">Completed</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule" />
+
+  <!-- ───────────────────────────────────────────────────
+       ⑦ CONTACT
+  ─────────────────────────────────────────────────── -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact-inner">
+        <p class="section-label">Contact</p>
+
+        <h2 id="contact-title" class="contact-headline reveal-title">
+          <span class="line-wrap"><span class="inner">Let's build</span></span>
+          <span class="line-wrap accent-line"><span class="inner"><em>something real.</em></span></span>
+        </h2>
+
+        <p class="contact-sub fade-in">
+          Open to consulting, research collaboration, offensive security engagements,
+          and interesting conversations. No cold pitches — only meaningful work.
+        </p>
+
+        <div class="contact-links">
+
+          <a href="mailto:antonyshane@rapturetwelve.com" class="c-link fade-in">
+            <div class="c-text">
+              <p class="c-label">Primary (Work)</p>
+              <p class="c-val">antonyshane@rapturetwelve.com</p>
+            </div>
+            <span class="c-arrow" aria-hidden="true">↗</span>
+            <span class="c-wipe" aria-hidden="true"></span>
+          </a>
+
+          <a href="mailto:antonymichealpeoshane@gmail.com" class="c-link fade-in">
+            <div class="c-text">
+              <p class="c-label">Personal</p>
+              <p class="c-val">antonymichealpeoshane@gmail.com</p>
+            </div>
+            <span class="c-arrow" aria-hidden="true">↗</span>
+            <span class="c-wipe" aria-hidden="true"></span>
+          </a>
+
+          <a href="tel:+919790791723" class="c-link fade-in">
+            <div class="c-text">
+              <p class="c-label">Phone</p>
+              <p class="c-val">+91 97907 91723</p>
+            </div>
+            <span class="c-arrow" aria-hidden="true">↗</span>
+            <span class="c-wipe" aria-hidden="true"></span>
+          </a>
+
+          <a href="https://antonyshane.com" target="_blank" rel="noopener" class="c-link fade-in">
+            <div class="c-text">
+              <p class="c-label">Website</p>
+              <p class="c-val">antonyshane.com</p>
+            </div>
+            <span class="c-arrow" aria-hidden="true">↗</span>
+            <span class="c-wipe" aria-hidden="true"></span>
+          </a>
+
+        </div>
+
+        <div class="social-row fade-in">
+          <a href="https://linkedin.com/in/antonyshane" target="_blank" rel="noopener" class="social-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/Antonyshane14" target="_blank" rel="noopener" class="social-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+          <a href="https://antonyshane.com" target="_blank" rel="noopener" class="social-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            antonyshane.com
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────────────────
+       FOOTER
+  ─────────────────────────────────────────────────── -->
+  <footer role="contentinfo">
+    <span>© 2026 Antony Shane</span>
+    <span>Rourkela, Odisha — India</span>
+    <a href="mailto:antonyshane@rapturetwelve.com">antonyshane@rapturetwelve.com</a>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
