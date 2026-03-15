@@ -51,7 +51,7 @@ function init() {
 
     // Particle system
     const particles = [];
-    const particleCount = 200;
+    const particleCount = 380;
     const accentColor = '#c8a96e';
     let mouseX = null;
     let mouseY = null;
@@ -66,7 +66,7 @@ function init() {
         const angle = Math.random() * Math.PI * 2;
         this.vx = Math.cos(angle) * this.driftSpeed;
         this.vy = Math.sin(angle) * this.driftSpeed;
-        this.size = Math.random() * 2 + 0.5;
+        this.size = Math.random() * 3 + 1.5;
         this.baseOpacity = Math.random() * 0.5 + 0.2;
         this.opacity = this.baseOpacity;
         this.wobble = Math.random() * Math.PI * 2;
@@ -142,14 +142,14 @@ function init() {
     function drawConnections() {
       ctx.save();
       ctx.strokeStyle = accentColor;
-      ctx.lineWidth = 0.5;
+      ctx.lineWidth = 0.8;
 
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const distance = Math.hypot(dx, dy);
-          const maxDistance = 120;
+          const maxDistance = 100;
 
           if (distance < maxDistance) {
             const alpha = (1 - distance / maxDistance) * 0.3;
