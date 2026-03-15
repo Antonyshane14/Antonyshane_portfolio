@@ -55,7 +55,7 @@ function init() {
     const accentColor = '#c8a96e';
     let mouseX = null;
     let mouseY = null;
-    const interactionRadius = 200;
+    const interactionRadius = 120;
 
     class Particle {
       constructor() {
@@ -96,18 +96,18 @@ function init() {
 
           if (distance < interactionRadius && distance > 0) {
             const angle = Math.atan2(dy, dx);
-            const repelForce = (interactionRadius - distance) / interactionRadius * 0.8;
+            const repelForce = (interactionRadius - distance) / interactionRadius * 0.25;
             this.vx += Math.cos(angle) * repelForce;
             this.vy += Math.sin(angle) * repelForce;
-            this.opacity = Math.min(1, this.opacity + 0.5);
+            this.opacity = Math.min(1, this.opacity + 0.3);
           }
         }
 
         // Smoothly decelerate back to each particle's own natural drift speed
         const speed = Math.hypot(this.vx, this.vy);
         if (speed > this.driftSpeed) {
-          this.vx *= 0.93;
-          this.vy *= 0.93;
+          this.vx *= 0.88;
+          this.vy *= 0.88;
           // Don't over-damp past drift speed
           const newSpeed = Math.hypot(this.vx, this.vy);
           if (newSpeed < this.driftSpeed) {
