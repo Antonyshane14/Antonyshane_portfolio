@@ -234,6 +234,7 @@ section { padding: 7rem 0; }
   font-family: var(--fd);
   font-size: 1.15rem;
   letter-spacing: 0.01em;
+  color: var(--text);
 }
 
 .nav-links {
@@ -243,10 +244,10 @@ section { padding: 7rem 0; }
 
 /* Underline expands from centre outward — NOT left to right */
 .nav-links a {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--text-mid);
   position: relative;
   padding-bottom: 3px;
   transition: color var(--t-fast);
@@ -277,14 +278,14 @@ section { padding: 7rem 0; }
 
 /* Nav CTA: clip-path colour flip */
 .nav-cta {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 0.6rem 1.5rem;
   border: 1px solid var(--border-2);
   position: relative;
   overflow: hidden;
-  color: var(--text-mid);
+  color: var(--text);
   transition: color var(--t-mid), border-color var(--t-mid);
 }
 
@@ -384,7 +385,7 @@ section { padding: 7rem 0; }
   gap: 0.5rem;
   padding: 0.85rem 1.9rem;
   font-family: var(--fm);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   overflow: hidden;
@@ -487,7 +488,7 @@ section { padding: 7rem 0; }
 }
 
 .hero-eyebrow {
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--text-dim);
@@ -513,7 +514,7 @@ section { padding: 7rem 0; }
 
 .hero-name {
   font-family: var(--fd);
-  font-size: clamp(4rem, 9vw, 7.5rem);
+  font-size: clamp(4.5rem, 10vw, 8.5rem);
   font-weight: 400;
   line-height: 0.92;
   letter-spacing: -0.03em;
@@ -525,7 +526,7 @@ section { padding: 7rem 0; }
 /* Word-swap: italic DM Serif looks cinematic */
 .hero-tagline {
   font-family: var(--fm);
-  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
   color: var(--text-dim);
   line-height: 2;
   margin-bottom: 2.75rem;
@@ -563,7 +564,7 @@ section { padding: 7rem 0; }
 .stat-num {
   display: block;
   font-family: var(--fd);
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   font-weight: 400;
   line-height: 1;
   color: var(--text);
