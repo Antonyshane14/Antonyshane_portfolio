@@ -677,7 +677,7 @@ section { padding: 7rem 0; }
   display: grid;
   grid-template-columns: clamp(340px, 34vw, 500px) minmax(520px, 1fr);
   gap: clamp(2.25rem, 4.5vw, 5rem);
-  align-items: start;
+  align-items: center;
 }
 
 .about-left {
