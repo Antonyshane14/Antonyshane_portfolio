@@ -216,6 +216,7 @@ section { padding: 7rem 0; }
   align-items: center;
   justify-content: space-between;
   padding: 1.4rem 3rem;
+  overflow: visible;
   transition:
     background var(--t-mid),
     backdrop-filter var(--t-mid),
@@ -240,6 +241,8 @@ section { padding: 7rem 0; }
 .nav-links {
   display: flex;
   gap: 2.25rem;
+  flex-wrap: nowrap;
+  flex-shrink: 1;
 }
 
 /* Underline expands from centre outward — NOT left to right */
@@ -516,11 +519,15 @@ section { padding: 7rem 0; }
   font-family: var(--fd);
   font-size: clamp(4.5rem, 10vw, 8.5rem);
   font-weight: 400;
-  line-height: 0.92;
+  line-height: 1;
   letter-spacing: -0.03em;
   margin-bottom: 2.25rem;
   white-space: nowrap;
   text-align: center;
+}
+
+.hero-name .line-wrap {
+  overflow: visible;
 }
 
 /* Word-swap: italic DM Serif looks cinematic */
