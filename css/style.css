@@ -1431,11 +1431,9 @@ body:has(.page-hero)::after {
 ────────────────────────────────────────────────────────── */
 #achievements { background: var(--bg-2); }
 
-#achievements .section-title {
-  margin-bottom: 3.5rem;
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  white-space: nowrap;
-}
+#achievements .section-title { margin-bottom: 3.5rem; }
+
+#achievements .container { max-width: 1360px; }
 
 .ach-grid {
   display: grid;
