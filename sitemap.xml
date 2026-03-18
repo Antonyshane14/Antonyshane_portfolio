@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
+<urlset 
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
@@ -11,7 +11,7 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.antonyshane.com/profile.png</image:loc>
-      <image:title>Antony Shane — Cybersecurity Entrepreneur &amp; Researcher</image:title>
+      <image:title>Antony Shane — Cybersecurity Entrepreneur & Researcher</image:title>
       <image:caption>Antony Shane, Founder of Rapture Twelve Pvt Ltd and Undergraduate Research Associate at NIT Rourkela</image:caption>
     </image:image>
     <image:image>
@@ -21,7 +21,7 @@
     </image:image>
   </url>
 
-  <!-- MY JOURNEY -->
+  <!-- ABOUT -->
   <url>
     <loc>https://www.antonyshane.com/about/</loc>
     <lastmod>2026-03-19</lastmod>
