@@ -1,74 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
+  <!-- HOME -->
   <url>
     <loc>https://antonyshane.com/</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://antonyshane.com/my%20professional%20pic.png</image:loc>
+      <image:title>Antony Shane — Cybersecurity Entrepreneur &amp; Researcher</image:title>
+      <image:caption>Antony Shane, Founder of Rapture Twelve Pvt Ltd and Undergraduate Research Associate at NIT Rourkela</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://antonyshane.com/hackathon-2025.jpg</image:loc>
+      <image:title>PSB Inter-NIT National Cybersecurity Hackathon 2025 — Grand Finale Award Ceremony</image:title>
+      <image:caption>Antony Shane receiving award at PSB Hackathon Series 2025, MANIT Bhopal</image:caption>
+    </image:image>
   </url>
 
+  <!-- MY JOURNEY -->
   <url>
     <loc>https://antonyshane.com/about/</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
 
-  <url>
-    <loc>https://antonyshane.com/experience/</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://antonyshane.com/projects/</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://antonyshane.com/skills/</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://antonyshane.com/achievements/</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://antonyshane.com/contact/</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+  <!-- RESEARCH -->
   <url>
     <loc>https://antonyshane.com/research/</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.92</priority>
   </url>
 
+  <!-- RAPTURE TWELVE -->
   <url>
     <loc>https://antonyshane.com/rapture-twelve/</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
   </url>
 
+  <!-- ZHARNYX -->
   <url>
     <loc>https://antonyshane.com/zharnyx/</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.88</priority>
+  </url>
+
+  <!-- EXPERIENCE -->
+  <url>
+    <loc>https://antonyshane.com/experience/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ACHIEVEMENTS -->
+  <url>
+    <loc>https://antonyshane.com/achievements/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- PROJECTS -->
+  <url>
+    <loc>https://antonyshane.com/projects/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- SKILLS -->
+  <url>
+    <loc>https://antonyshane.com/skills/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+  </url>
+
+  <!-- CONTACT -->
+  <url>
+    <loc>https://antonyshane.com/contact/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.75</priority>
   </url>
 
 </urlset>
