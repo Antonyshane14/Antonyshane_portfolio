@@ -1439,6 +1439,46 @@ body:has(.page-hero)::after {
   gap: 4rem;
 }
 
+/* New achievements layout: photo+achievements top, certs bottom */
+.ach-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 3rem 4rem;
+}
+
+.ach-photo-area {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.ach-photo-area .ach-photo-wrap {
+  height: 100%;
+}
+
+.ach-photo-area .ach-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 280px;
+}
+
+.ach-layout > .ach-col {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.ach-certs-row {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+.ach-certs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 3rem;
+}
+
 .ach-col-title {
   font-family: var(--fm);
   font-size: 0.65rem;
