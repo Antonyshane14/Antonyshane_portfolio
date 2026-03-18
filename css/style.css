@@ -1447,7 +1447,12 @@ body:has(.page-hero)::after {
   grid-template-columns: 42% 1fr;
   grid-template-rows: auto auto;
   gap: 3rem 4rem;
+  align-items: start;
 }
+
+/* Tighter spacing in achievements column to match image height */
+.ach-layout > .ach-col .ach-col-title { margin-bottom: 1rem; }
+.ach-layout > .ach-col .ach-item { padding: 0.7rem 0; }
 
 .ach-photo-area {
   grid-column: 1;
