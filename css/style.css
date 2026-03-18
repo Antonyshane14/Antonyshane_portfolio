@@ -220,7 +220,8 @@ section { padding: 7rem 0; }
   z-index: 500;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 3rem;
   padding: 1.4rem 3rem;
   overflow: visible;
   transition:
