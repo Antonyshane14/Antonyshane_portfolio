@@ -698,6 +698,7 @@ body:has(.page-hero)::after {
 .about-body {
   width: 100%;
   max-width: 780px;
+  padding-top: 3.5rem;
 }
 
 /* TODO: swap .secondary-photo for a real <img> */
