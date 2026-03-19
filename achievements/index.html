@@ -117,6 +117,7 @@
 </head>
 
 <body>
+  <div id="vanta-bg"></div>
   <div id="mobile-nav" aria-label="Mobile navigation" role="dialog" aria-modal="true" hidden>
     <button class="mobile-close" id="close-mobile-nav" aria-label="Close menu">✕</button>
     <a href="../"                class="mobile-nav-link">Home</a>
@@ -258,5 +259,22 @@
   </footer>
 
   <script src="../js/pages.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js"></script>
+  <script>
+    VANTA.FOG({
+      el: '#vanta-bg',
+      mouseControls: false,
+      touchControls: false,
+      gyroControls: false,
+      highlightColor: 0xa88a52,
+      midtoneColor: 0x1e1810,
+      lowlightColor: 0x080808,
+      baseColor: 0x080808,
+      blurFactor: 0.92,
+      speed: 2.00,
+      zoom: 0.80
+    });
+  </script>
 </body>
 </html>
