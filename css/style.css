@@ -798,6 +798,7 @@ body:has(.page-hero)::after {
   line-height: 1.9;
   color: var(--text-dim);
   margin-bottom: 1.4rem;
+  text-align: justify;
 }
 
 /* Tags: bottom-up background fill on hover */
