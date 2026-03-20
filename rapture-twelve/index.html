@@ -4,229 +4,644 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../favicon.png" />
-  <title>Rapture Twelve Pvt Ltd - DPIIT Certified Cybersecurity Startup, India</title>
-  <meta name="description" content="Rapture Twelve Pvt Ltd is a DPIIT-certified cybersecurity startup founded by Antony Shane. Delivering offensive security, red teaming, VAPT, digital forensics, and AI-driven security products to national and international clients." />
-  <meta name="keywords" content="Rapture Twelve, DPIIT cybersecurity startup India, red teaming India, penetration testing India, AI cybersecurity products, offensive security services, Antony Shane startup" />
-  <meta name="author" content="Antony Shane" />
-  <link rel="canonical" href="https://www.antonyshane.com/rapture-twelve/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Rapture Twelve Pvt Ltd - DPIIT Certified Cybersecurity Startup" />
-  <meta property="og:description" content="Offensive security, red teaming, VAPT, digital forensics and AI-driven security products. DPIIT certified · Founded 2025 · India." />
-  <meta property="og:url"         content="https://www.antonyshane.com/rapture-twelve/" />
-  <meta property="og:site_name"   content="Antony Shane" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary" />
-  <meta name="twitter:title"       content="Rapture Twelve Pvt Ltd | Cybersecurity Startup India" />
-  <meta name="twitter:description" content="DPIIT-certified · Red Teaming · VAPT · AI Security · 11+ projects in 7 months · India" />
-
-  <!-- JSON-LD: Organization -->
-  <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Antony Shane",    "item": "https://antonyshane.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Rapture Twelve", "item": "https://antonyshane.com/rapture-twelve/" }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Rapture Twelve Pvt Ltd",
-      "url": "https://antonyshane.com/rapture-twelve/",
-      "description": "DPIIT-certified cybersecurity startup providing offensive security, red teaming, VAPT, digital forensics, and AI-driven security products to national and international clients.",
-      "foundingDate": "2025",
-      "foundingLocation": "India",
-      "founder": {
-        "@type": "Person",
-        "name": "Antony Shane",
-        "url": "https://antonyshane.com"
-      },
-      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 25 },
-      "knowsAbout": [
-        "Red Teaming",
-        "Penetration Testing",
-        "Vulnerability Assessment",
-        "Digital Forensics",
-        "AI-Driven Cybersecurity",
-        "Offensive Security"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "antonyshane@rapturetwelve.com",
-        "contactType": "customer service"
-      }
-    }
-  ]
-  </script>
+  <title>Rapture Twelve Pvt Ltd - Infiltrate Exploit Secure</title>
+  <meta name="description" content="Rapture Twelve - DPIIT-certified cybersecurity startup. Offensive security, VAPT, red teaming, digital forensics, SOC operations, and AI-driven security products." />
+  <meta property="og:title" content="Rapture Twelve Pvt Ltd - Infiltrate Exploit Secure" />
+  <meta property="og:description" content="Offensive-first cybersecurity. VAPT, red teaming, digital forensics, AI-driven tools. DPIIT certified · India." />
+  <meta property="og:url" content="https://www.antonyshane.com/rapture-twelve/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
 
   <style>
-    .page-hero {
-      min-height: 65vh;
+    :root {
+      --r12-black: #0a0a0a;
+      --r12-dark: #111111;
+      --r12-gray: #1a1a1a;
+      --r12-mid: #2a2a2a;
+      --r12-steel: #8a8a8a;
+      --r12-silver: #c0c0c0;
+      --r12-white: #f0ede8;
+      --r12-gold: #c8a96e;
+      --r12-font: 'Orbitron', monospace;
+      --r12-body: 'Inter', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { color: var(--r12-white); font-family: var(--r12-body); }
+
+    /* ── NAV (portfolio style) ── */
+    #nav { background: rgba(10,10,10,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(200,169,110,0.15); }
+    #nav .nav-logo { color: var(--r12-white); }
+    #nav .nav-links a { color: rgba(240,237,232,0.6); }
+    #nav .nav-links a:hover, #nav .nav-links a[aria-current] { color: var(--r12-white); }
+
+    /* ── HERO ── */
+    .r12-hero {
+      position: relative;
+      min-height: 72vh;
       display: flex;
       align-items: center;
       padding: 8rem 0 5rem;
-      position: relative;
       overflow: hidden;
     }
-    .page-hero::after {
-      content: '';
-      position: absolute;
-      top: 30%; right: 8%;
-      width: 520px; height: 520px;
-      background: radial-gradient(circle, rgba(200,169,110,0.06) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .page-hero-inner {
+    /* golden grid overlay activates via body:has(.page-hero)::after in style.css */
+    .r12-hero-inner {
+      position: relative; z-index: 2;
       max-width: 1160px;
       margin: 0 auto;
       padding: 0 3rem;
       width: 100%;
     }
-    .page-hero-name {
-      font-family: var(--fd);
-      font-size: clamp(3rem, 7vw, 5.5rem);
+    .r12-breadcrumb {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(240,237,232,0.4);
+      margin-bottom: 2.5rem;
+      display: flex; gap: 0.6rem; align-items: center;
+      font-family: var(--r12-body);
+    }
+    .r12-breadcrumb a { color: var(--r12-gold); text-decoration: none; transition: opacity 0.2s; }
+    .r12-breadcrumb a:hover { opacity: 0.7; }
+    .r12-breadcrumb span { opacity: 0.4; }
+    .r12-company-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3.2rem, 7.5vw, 6rem);
       font-weight: 400;
       line-height: 1;
       letter-spacing: -0.03em;
-      margin-bottom: 1.75rem;
+      color: var(--r12-white);
+      margin: 0;
     }
-    .page-hero-sub {
-      font-size: 0.88rem;
-      color: var(--text-dim);
-      max-width: 580px;
-      line-height: 1.9;
-      margin-bottom: 2.25rem;
+    .r12-company-sub {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3.2rem, 7.5vw, 6rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--r12-gold);
+      margin-bottom: 2rem;
     }
-    .breadcrumb {
-      font-size: 0.95rem;
-      letter-spacing: 0.18em;
+    .r12-tagline {
+      font-family: var(--r12-font);
+      font-size: clamp(0.6rem, 1.2vw, 0.75rem);
+      font-weight: 700;
+      letter-spacing: 5px;
+      color: var(--r12-gold);
+      margin-bottom: 1rem;
       text-transform: uppercase;
-      color: var(--text-dim);
-      margin-bottom: 2.5rem;
-      display: flex;
-      gap: 0.6rem;
-      align-items: center;
+      opacity: 0.8;
     }
-    .breadcrumb a { color: var(--accent); transition: opacity 0.2s; }
-    .breadcrumb a:hover { opacity: 0.75; }
-    .breadcrumb span { opacity: 0.4; }
+    .r12-subtitle {
+      font-size: 0.88rem;
+      color: rgba(240,237,232,0.6);
+      max-width: 560px;
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+    }
+    .r12-hero-cta {
+      display: flex; gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .r12-btn-primary {
+      padding: 0.85rem 2rem;
+      background: var(--r12-gold);
+      color: var(--r12-black);
+      border: 2px solid var(--r12-gold);
+      font-family: var(--r12-body);
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .r12-btn-primary:hover {
+      background: transparent;
+      color: var(--r12-gold);
+      transform: translateY(-2px);
+    }
+    .r12-btn-secondary {
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--r12-white);
+      border: 2px solid rgba(240,237,232,0.25);
+      font-family: var(--r12-body);
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.25s ease;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .r12-btn-secondary:hover {
+      border-color: rgba(240,237,232,0.5);
+      background: rgba(240,237,232,0.05);
+      transform: translateY(-2px);
+    }
 
-    /* Stats band */
-    .stats-band {
+    /* ── SECTION BASE ── */
+    .r12-section { padding: 6rem 0; }
+    .r12-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .r12-section-header { text-align: center; margin-bottom: 3.5rem; }
+    .r12-section-title {
+      font-family: var(--r12-font);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--r12-white);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    .r12-section-title::after {
+      content: '';
+      position: absolute; bottom: -10px; left: 50%;
+      transform: translateX(-50%);
+      width: 50px; height: 2px;
+      background: var(--r12-gold);
+    }
+    .r12-section-sub {
+      color: rgba(240,237,232,0.55);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 1.5rem auto 0;
+    }
+
+    /* ── SERVICES ── */
+    .r12-services { background: transparent; }
+    .r12-cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .r12-cap-card {
+      position: relative;
+      background: rgba(12,12,12,0.75);
+      border: 1px solid rgba(200,169,110,0.12);
+      border-top: 2px solid var(--r12-gold);
+      border-radius: 2px;
+      padding: 2.5rem 2rem 2.5rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: flex-start;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .r12-cap-card:hover {
+      border-color: rgba(200,169,110,0.45);
+      border-top-color: var(--r12-gold);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(200,169,110,0.1);
+    }
+    .r12-cap-card::before {
+      content: attr(data-num);
+      position: absolute;
+      bottom: -0.5rem; right: 1rem;
+      font-family: var(--r12-font);
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--r12-gold);
+      opacity: 0.04;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      transition: opacity 0.3s;
+    }
+    .r12-cap-card:hover::before { opacity: 0.07; }
+    .r12-cap-card-label {
+      font-family: var(--r12-font);
+      font-size: 0.52rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--r12-gold);
+      margin-bottom: 0.75rem;
+    }
+    .r12-cap-card-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+      font-weight: 400;
+      color: var(--r12-white);
+      line-height: 1.35;
+      margin: 0 0 1.5rem 0;
+    }
+    .r12-cap-card-tags {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+      width: 100%;
+      margin-top: 0;
+    }
+    .r12-cap-card-tag {
+      font-size: 0.63rem;
+      color: rgba(240,237,232,0.55);
+      background: rgba(200,169,110,0.06);
+      border: 1px solid rgba(200,169,110,0.15);
+      padding: 0.45rem 0.4rem;
+      border-radius: 2px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    @media (max-width: 1024px) { .r12-cap-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .r12-cap-grid { grid-template-columns: 1fr; } }
+
+    /* ── DIFFERENTIATORS ── */
+    .r12-diff { background: transparent; }
+    .r12-diff-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1px;
-      background: var(--border);
-      margin-top: 4rem;
+      background: rgba(200,169,110,0.12);
+      border: 1px solid rgba(200,169,110,0.15);
+      border-radius: 10px;
+      overflow: hidden;
     }
-    .sb-item {
-      background: var(--bg-2);
-      padding: 2.25rem 2rem;
-      text-align: center;
+    .r12-diff-card {
+      background: rgba(18,18,18,0.88);
+      padding: 2.5rem 2rem;
+      position: relative;
+      transition: background 0.3s ease;
     }
-    .sb-num {
-      font-family: var(--fd);
-      font-size: 2.8rem;
-      color: var(--text);
+    .r12-diff-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0;
+      width: 2px; height: 0;
+      background: var(--r12-gold);
+      transition: height 0.4s ease;
+    }
+    .r12-diff-card:hover { background: rgba(28,28,28,0.92); }
+    .r12-diff-card:hover::before { height: 100%; }
+    .r12-diff-num {
+      font-family: var(--r12-font);
+      font-size: 1.8rem;
+      color: var(--r12-gold);
+      opacity: 0.2;
       line-height: 1;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
-    .sb-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-    }
-
-    /* Services grid */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      margin-top: 3rem;
-    }
-    .service-card {
-      background: var(--bg);
-      padding: 2.5rem;
-      transition: background var(--t-mid);
-    }
-    .service-card:hover { background: var(--bg-2); }
-    .sc-icon {
-      font-size: 1.4rem;
-      margin-bottom: 1.1rem;
-      display: block;
-    }
-    .sc-name {
-      font-family: var(--fd);
-      font-size: 1.1rem;
-      margin-bottom: 0.75rem;
-    }
-    .sc-desc {
+    .r12-diff-title {
+      font-family: var(--r12-font);
       font-size: 0.78rem;
-      color: var(--text-dim);
-      line-height: 1.85;
+      font-weight: 700;
+      color: var(--r12-white);
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    .r12-diff-text {
+      font-size: 0.78rem;
+      color: rgba(240,237,232,0.55);
+      line-height: 1.75;
     }
 
-    /* About block */
-    .about-block {
+    /* ── PROJECTS ── */
+    .r12-projects { background: transparent; }
+    .r12-projects-table { margin-top: 2rem; border-top: 1px solid rgba(200,169,110,0.2); }
+    .r12-pt-row {
+      display: grid;
+      grid-template-columns: 140px 1fr 1fr 110px;
+      gap: 2rem;
+      align-items: start;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid rgba(200,169,110,0.1);
+      transition: background 0.2s;
+    }
+    .r12-pt-row:hover { background: rgba(200,169,110,0.03); padding-left: 0.5rem; }
+    .r12-pt-type {
+      font-family: var(--r12-font);
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--r12-gold);
+      padding-top: 0.1rem;
+    }
+    .r12-pt-work { font-size: 0.82rem; color: var(--r12-white); line-height: 1.6; }
+    .r12-pt-impact { font-size: 0.78rem; color: rgba(240,237,232,0.55); line-height: 1.6; }
+    .r12-pt-outcome {
+      font-family: var(--r12-font);
+      font-size: 0.9rem;
+      color: var(--r12-white);
+      text-align: right;
+    }
+
+    /* ── PRODUCTS ── */
+    .r12-products { background: transparent; }
+    .r12-product-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .r12-product-card {
+      background: rgba(18,18,18,0.82);
+      border: 1px solid rgba(200,169,110,0.2);
+      border-radius: 10px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .r12-product-card:hover { border-color: rgba(200,169,110,0.5); transform: translateY(-4px); }
+    .r12-product-label {
+      font-family: var(--r12-font);
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--r12-gold);
+      margin-bottom: 1.25rem;
+    }
+    .r12-product-title {
+      font-family: var(--r12-font);
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      font-weight: 700;
+      color: var(--r12-white);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    .r12-product-desc {
+      font-size: 0.8rem;
+      color: rgba(240,237,232,0.55);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+    .r12-product-tags {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .r12-product-tag {
+      font-family: var(--r12-font);
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--r12-gold);
+      border: 1px solid rgba(200,169,110,0.3);
+      padding: 0.35rem 0.75rem;
+      border-radius: 3px;
+    }
+
+    /* ── ABOUT / LEADERSHIP ── */
+    .r12-about { background: transparent; }
+    .r12-about-text {
+      font-size: 0.95rem;
+      color: rgba(240,237,232,0.65);
+      line-height: 1.85;
+      max-width: 780px;
+      margin: 0 auto 3.5rem;
+      text-align: center;
+    }
+    .r12-leaders-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .r12-leader-card {
+      position: relative;
+      background: rgba(14,14,14,0.82);
+      border: 1px solid rgba(200,169,110,0.25);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.175,0.885,0.32,1.275), box-shadow 0.35s ease;
+    }
+    .r12-leader-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: 12px;
+      padding: 2px;
+      background: linear-gradient(270deg, #c8a96e 0%, transparent 25%, #c8a96e 50%, transparent 75%, #c8a96e 100%);
+      background-size: 300% 300%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: laser-move 3s linear infinite;
+      opacity: 0;
+      pointer-events: none;
+      filter: blur(2px) brightness(1.5);
+      transition: opacity 0.3s;
+    }
+    .r12-leader-card:hover { transform: scale(1.04) translateY(-6px); box-shadow: 0 16px 32px rgba(200,169,110,0.3); }
+    .r12-leader-card:hover::before { opacity: 1; }
+    @keyframes laser-move {
+      0%   { background-position: 0% 0%; }
+      25%  { background-position: 100% 0%; }
+      50%  { background-position: 100% 100%; }
+      75%  { background-position: 0% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+    .r12-leader-name {
+      font-family: var(--r12-font);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--r12-white);
+      margin-bottom: 0.3rem;
+    }
+    .r12-leader-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--r12-gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .r12-leader-bio {
+      font-size: 0.82rem;
+      color: rgba(240,237,232,0.65);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .r12-leader-contact { display: flex; flex-direction: column; gap: 0.35rem; }
+    .r12-leader-contact a {
+      color: var(--r12-gold); text-decoration: none;
+      font-size: 0.78rem; font-weight: 600;
+      transition: color 0.2s;
+    }
+    .r12-leader-contact a:hover { color: #e0c88a; text-decoration: underline; }
+
+    /* ── CONTACT ── */
+    .r12-contact { background: transparent; padding: 6rem 0; }
+    .r12-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 3rem;
       align-items: start;
     }
-    .ab-body .section-title { margin-bottom: 1.75rem; }
-    .ab-p {
-      font-size: 0.87rem;
-      color: var(--text-dim);
-      line-height: 1.9;
-      margin-bottom: 1.35rem;
+    .r12-contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+    .r12-contact-block {
+      background: rgba(18,18,18,0.8);
+      border: 1px solid rgba(200,169,110,0.2);
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      position: relative; overflow: hidden;
     }
-    .ab-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+    .r12-contact-block::after {
+      content: ''; position: absolute;
+      top: 0; right: 0;
+      width: 2px; height: 100%;
+      background: linear-gradient(180deg, transparent, rgba(200,169,110,0.6), transparent);
+      opacity: 0; transition: opacity 0.3s;
     }
-    .ab-meta-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
+    .r12-contact-block:hover { transform: translateY(-3px); border-color: rgba(200,169,110,0.5); }
+    .r12-contact-block:hover::after { opacity: 1; }
+    .r12-contact-block h3 {
+      font-family: var(--r12-font);
+      font-size: 0.9rem;
+      color: var(--r12-white);
+      margin-bottom: 0.2rem;
     }
-    .ab-meta-item:first-child { border-top: 1px solid var(--border); }
-    .am-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
+    .r12-contact-block p {
+      font-size: 0.65rem;
       text-transform: uppercase;
-      color: var(--text-dim);
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: var(--r12-gold);
+      margin-bottom: 0.75rem;
     }
-    .am-val {
-      font-family: var(--fd);
-      font-size: 0.95rem;
-      color: var(--text);
+    .r12-contact-links { display: flex; flex-direction: column; gap: 0.4rem; }
+    .r12-contact-link {
+      display: flex; align-items: center; gap: 0.5rem;
+      color: rgba(240,237,232,0.65);
+      text-decoration: none; font-size: 0.8rem;
+      padding: 0.5rem 0.6rem; border-radius: 6px;
+      transition: all 0.3s ease; border: 1px solid transparent;
+    }
+    .r12-contact-link:hover {
+      color: var(--r12-white); background: rgba(200,169,110,0.08);
+      border-color: rgba(200,169,110,0.3); transform: translateX(6px);
     }
 
-    .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a { font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.1em; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--text); }
+    /* form */
+    .r12-form-wrap {
+      background: rgba(18,18,18,0.8);
+      border: 1px solid rgba(200,169,110,0.2);
+      border-radius: 10px;
+      padding: 2rem;
+    }
+    .r12-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .r12-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .r12-form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .r12-form-group label {
+      font-family: var(--r12-font);
+      font-size: 0.58rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(240,237,232,0.7);
+    }
+    .r12-form-group input,
+    .r12-form-group textarea {
+      padding: 0.75rem 1rem;
+      background: rgba(42,42,42,0.8);
+      border: 1px solid rgba(200,169,110,0.2);
+      border-radius: 6px;
+      color: var(--r12-white);
+      font-family: var(--r12-body);
+      font-size: 0.88rem;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+    .r12-form-group input:focus,
+    .r12-form-group textarea:focus {
+      border-color: var(--r12-gold);
+      box-shadow: 0 0 0 3px rgba(200,169,110,0.1);
+    }
+    .r12-form-group textarea { min-height: 100px; resize: vertical; }
+    .r12-form-group input::placeholder,
+    .r12-form-group textarea::placeholder { color: rgba(240,237,232,0.3); font-size: 0.82rem; }
+    .r12-submit {
+      width: 100%; padding: 1rem;
+      background: var(--r12-gold);
+      color: var(--r12-black);
+      border: none; border-radius: 6px;
+      font-family: var(--r12-font);
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .r12-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(200,169,110,0.35); }
+    .r12-form-status {
+      padding: 0.75rem 1rem; border-radius: 6px;
+      text-align: center; font-size: 0.85rem; font-weight: 600;
+      display: none;
+    }
+    .r12-form-status.success { background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3); color: #00ff88; }
+    .r12-form-status.error { background: rgba(255,107,107,0.1); border: 1px solid rgba(255,107,107,0.3); color: #ff6b6b; }
 
+    /* ── FOOTER ── */
+    .r12-footer {
+      background: rgba(8,8,8,0.85);
+      border-top: 1px solid rgba(200,169,110,0.15);
+      padding: 3rem 0 1.5rem;
+    }
+    .r12-footer-inner {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 2rem;
+    }
+    .r12-footer-brand-name {
+      font-family: var(--r12-font);
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: 2px; color: var(--r12-white);
+      display: block; margin-bottom: 0.4rem;
+    }
+    .r12-footer-tagline {
+      font-size: 0.72rem; letter-spacing: 2px;
+      color: rgba(240,237,232,0.45); text-transform: uppercase;
+    }
+    .r12-footer-links { display: flex; flex-direction: column; gap: 0.75rem; }
+    .r12-footer-links a { color: rgba(240,237,232,0.5); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .r12-footer-links a:hover { color: var(--r12-white); }
+    .r12-footer-contact p { color: rgba(240,237,232,0.45); font-size: 0.78rem; margin-bottom: 0.4rem; }
+    .r12-footer-bottom {
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(200,169,110,0.1);
+      text-align: center;
+      color: rgba(240,237,232,0.35);
+      font-size: 0.8rem;
+    }
+    .r12-visit-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 1.5rem;
+      padding: 0.7rem 1.5rem;
+      border: 1px solid rgba(200,169,110,0.4);
+      color: var(--r12-gold); font-family: var(--r12-font);
+      font-size: 0.62rem; letter-spacing: 0.15em;
+      text-transform: uppercase; text-decoration: none;
+      border-radius: 4px; transition: all 0.2s;
+    }
+    .r12-visit-btn:hover { background: rgba(200,169,110,0.1); border-color: var(--r12-gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .r12-services-grid { grid-template-columns: repeat(2, 1fr); }
+      .r12-diff-grid { grid-template-columns: repeat(2, 1fr); }
+      .r12-product-grid { grid-template-columns: 1fr; }
+      .r12-contact-grid { grid-template-columns: 1fr; }
+      .r12-footer-inner { grid-template-columns: 1fr 1fr; }
+    }
     @media (max-width: 768px) {
-      .stats-band    { grid-template-columns: 1fr 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
-      .about-block   { grid-template-columns: 1fr; gap: 3rem; }
+      .r12-services-grid { grid-template-columns: 1fr; }
+      .r12-diff-grid { grid-template-columns: 1fr; }
+      .r12-leaders-grid { grid-template-columns: 1fr; }
+      .r12-pt-row { grid-template-columns: 1fr; }
+      .r12-pt-type, .r12-pt-outcome { display: none; }
+      .r12-form-row { grid-template-columns: 1fr; }
+      .r12-footer-inner { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -234,7 +649,6 @@
 <body>
   <div id="vanta-bg"></div>
 
-  <!-- Mobile navigation overlay -->
   <div id="mobile-nav" aria-label="Mobile navigation" role="dialog" aria-modal="true" hidden>
     <button class="mobile-close" id="close-mobile-nav" aria-label="Close menu">✕</button>
     <a href="../"                class="mobile-nav-link">Home</a>
@@ -245,6 +659,7 @@
     <a href="../rapture-twelve/" class="mobile-nav-link">Rapture Twelve</a>
     <a href="../zharnyx/"        class="mobile-nav-link">Zharnyx</a>
     <a href="../#about"          class="mobile-nav-link">About</a>
+    <a href="../contact/"        class="mobile-nav-link">Contact</a>
   </div>
 
   <nav id="nav" role="navigation" aria-label="Primary navigation">
@@ -255,7 +670,7 @@
       <li><a href="../experience/">Experience</a></li>
       <li><a href="../projects/">Projects</a></li>
       <li><a href="../research/">Research</a></li>
-      <li><a href="../rapture-twelve/" aria-current="page" style="color:var(--text)">Rapture Twelve</a></li>
+      <li><a href="../rapture-twelve/" aria-current="page" style="color:#f0ede8">Rapture Twelve</a></li>
       <li><a href="../zharnyx/">Zharnyx</a></li>
       <li><a href="../#about">About</a></li>
       <li><a href="../contact/">Contact</a></li>
@@ -265,208 +680,313 @@
     </button>
   </nav>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero" aria-label="Rapture Twelve overview">
-    <div class="page-hero-inner">
-      <p class="breadcrumb">
-        <a href="../index.html">Antony Shane</a>
+  <!-- ① HERO -->
+  <section class="r12-hero page-hero">
+    <div class="r12-hero-inner">
+      <div class="r12-breadcrumb">
+        <a href="../">Antony Shane</a>
         <span>/</span>
-        <span style="color:var(--text)">Rapture Twelve</span>
-      </p>
-      <h1 class="page-hero-name">
-        <span class="line-wrap"><span class="inner">Rapture</span></span>
-        <span class="line-wrap accent-line"><span class="inner">Twelve.</span></span>
-      </h1>
-      <p class="page-hero-sub">
-        A DPIIT-certified cybersecurity startup delivering offensive security operations,
-        AI-driven security products, and enterprise-grade threat defence to national and
-        international clients — built from the ground up in 2025.
-      </p>
-      <div class="hero-cta-row">
-        <a href="mailto:antonyshane@rapturetwelve.com" class="btn btn-primary">
-          <span class="btn-text">Engage with us</span>
-          <span class="btn-icon" aria-hidden="true">↗</span>
-          <span class="btn-fill" aria-hidden="true"></span>
-        </a>
-        <a href="../index.html" class="btn btn-ghost">
-          <span class="btn-text">← Back to portfolio</span>
-        </a>
+        Rapture Twelve
+      </div>
+      <h1 class="r12-company-name">Rapture Twelve</h1>
+      <p class="r12-company-sub">Pvt Ltd.</p>
+      <p class="r12-tagline">Infiltrate &nbsp;•&nbsp; Exploit &nbsp;•&nbsp; Secure</p>
+      <p class="r12-subtitle">AI-driven cybersecurity leveraging offensive and defensive expertise to anticipate and outsmart evolving threats. DPIIT-certified, globally operational.</p>
+      <div class="r12-hero-cta">
+        <a href="#contact" class="r12-btn-primary">Contact Us ↗</a>
+        <a href="https://www.rapturetwelve.com" target="_blank" rel="noopener" class="r12-btn-secondary">← Visit Website</a>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section aria-label="Key metrics">
-    <div class="container">
-      <div class="stats-band">
-        <div class="sb-item fade-in">
-          <p class="sb-num"><span class="counter" data-target="11">0</span>+</p>
-          <p class="sb-label">Projects delivered</p>
-        </div>
-        <div class="sb-item fade-in">
-          <p class="sb-num"><span class="counter" data-target="25">0</span>+</p>
-          <p class="sb-label">Team members</p>
-        </div>
-        <div class="sb-item fade-in">
-          <p class="sb-num">7</p>
-          <p class="sb-label">Months to first 11 projects</p>
-        </div>
-        <div class="sb-item fade-in">
-          <p class="sb-num">2</p>
-          <p class="sb-label">Continents served</p>
-        </div>
+  <!-- ② SERVICES -->
+  <section class="r12-section r12-services" id="services">
+    <div class="r12-container">
+      <div class="r12-section-header">
+        <h2 class="r12-section-title">Core Capabilities</h2>
       </div>
-    </div>
-  </section>
+      <div class="r12-cap-grid">
 
-  <hr class="section-rule" />
-
-  <!-- ABOUT -->
-  <section aria-labelledby="rt-about-title">
-    <div class="container">
-      <div class="about-block">
-
-        <div class="ab-meta fade-in">
-          <div class="ab-meta-item">
-            <span class="am-label">Founded</span>
-            <span class="am-val">2025</span>
-          </div>
-          <div class="ab-meta-item">
-            <span class="am-label">Status</span>
-            <span class="am-val">DPIIT Certified Startup</span>
-          </div>
-          <div class="ab-meta-item">
-            <span class="am-label">Headquarters</span>
-            <span class="am-val">India</span>
-          </div>
-          <div class="ab-meta-item">
-            <span class="am-label">Team size</span>
-            <span class="am-val">25+ members</span>
-          </div>
-          <div class="ab-meta-item">
-            <span class="am-label">Founder &amp; CEO</span>
-            <span class="am-val">Antony Shane</span>
-          </div>
-          <div class="ab-meta-item">
-            <span class="am-label">Focus</span>
-            <span class="am-val">Offensive Security · AI Products</span>
+        <div class="r12-cap-card" data-num="01">
+          <p class="r12-cap-card-label">Security Testing</p>
+          <h3 class="r12-cap-card-title">Vulnerability Assessment &amp; Penetration Testing</h3>
+          <div class="r12-cap-card-tags">
+            <span class="r12-cap-card-tag">App / Infra VAPT</span>
+            <span class="r12-cap-card-tag">Network VAPT</span>
+            <span class="r12-cap-card-tag">Code Review</span>
+            <span class="r12-cap-card-tag">Red Team</span>
           </div>
         </div>
 
-        <div class="ab-body">
-          <h2 id="rt-about-title" class="section-title reveal-title">
-            <span class="line-wrap"><span class="inner">Built for</span></span>
-            <span class="line-wrap"><span class="inner">real threats.</span></span>
-          </h2>
-          <p class="ab-p fade-in">
-            Rapture Twelve was launched from first principles: no template, no template team.
-            Built a 25+ member cybersecurity unit from scratch — red teamers, malware engineers,
-            forensic analysts, and AI developers — and went live with 11+ national and international
-            engagements within 7 months of incorporation.
-          </p>
-          <p class="ab-p fade-in">
-            The firm's core thesis: <span class="hl">the best defence is an attacker's mindset,
-            engineered at scale.</span> Proprietary AI-driven security products are under active
-            development for global enterprise expansion, moving beyond traditional point solutions
-            to autonomous, adaptive security systems.
-          </p>
-          <p class="ab-p fade-in">
-            DPIIT recognition positions Rapture Twelve within India's national innovation ecosystem,
-            enabling structured growth, talent acquisition, and government-linked security engagements.
-          </p>
+        <div class="r12-cap-card" data-num="02">
+          <p class="r12-cap-card-label">Intelligent Security</p>
+          <h3 class="r12-cap-card-title">AI / ML Integrated Tools Development</h3>
+          <div class="r12-cap-card-tags">
+            <span class="r12-cap-card-tag">Auto Pentesting</span>
+            <span class="r12-cap-card-tag">AI Threat Detection</span>
+            <span class="r12-cap-card-tag">ML Security Analysis</span>
+            <span class="r12-cap-card-tag">SOC Automation</span>
+          </div>
+        </div>
+
+        <div class="r12-cap-card" data-num="03">
+          <p class="r12-cap-card-label">Enterprise Security</p>
+          <h3 class="r12-cap-card-title">General Security Services &amp; Consulting</h3>
+          <div class="r12-cap-card-tags">
+            <span class="r12-cap-card-tag">Security Architecture</span>
+            <span class="r12-cap-card-tag">IAM</span>
+            <span class="r12-cap-card-tag">Network &amp; Firewall</span>
+            <span class="r12-cap-card-tag">DevSecOps / CI/CD</span>
+          </div>
+        </div>
+
+        <div class="r12-cap-card" data-num="04">
+          <p class="r12-cap-card-label">24 / 7 Monitoring</p>
+          <h3 class="r12-cap-card-title">SOC Operations &amp; Incident Response</h3>
+          <div class="r12-cap-card-tags">
+            <span class="r12-cap-card-tag">24/7 Monitoring</span>
+            <span class="r12-cap-card-tag">Incident Response</span>
+            <span class="r12-cap-card-tag">Threat Hunting</span>
+            <span class="r12-cap-card-tag">Event Correlation</span>
+          </div>
+        </div>
+
+        <div class="r12-cap-card" data-num="05">
+          <p class="r12-cap-card-label">Custom Solutions</p>
+          <h3 class="r12-cap-card-title">Full Stack Development &amp; Deployment</h3>
+          <div class="r12-cap-card-tags">
+            <span class="r12-cap-card-tag">Web &amp; Mobile Dev</span>
+            <span class="r12-cap-card-tag">Cloud Architecture</span>
+            <span class="r12-cap-card-tag">Enterprise Software</span>
+            <span class="r12-cap-card-tag">Database &amp; API</span>
+          </div>
+        </div>
+
+        <div class="r12-cap-card" data-num="06">
+          <p class="r12-cap-card-label">Process Optimisation</p>
+          <h3 class="r12-cap-card-title">AI Integration &amp; Business Automation</h3>
+          <div class="r12-cap-card-tags">
+            <span class="r12-cap-card-tag">AI Workflow Dev</span>
+            <span class="r12-cap-card-tag">Process Automation</span>
+            <span class="r12-cap-card-tag">System Integration</span>
+            <span class="r12-cap-card-tag">Smart Automation</span>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <hr class="section-rule" />
-
-  <!-- SERVICES -->
-  <section aria-labelledby="services-title">
-    <div class="container">
-      <p class="section-label">What we do</p>
-      <h2 id="services-title" class="section-title reveal-title">
-        <span class="line-wrap"><span class="inner">Services &amp;</span></span>
-        <span class="line-wrap"><span class="inner">capabilities.</span></span>
-      </h2>
-
-      <div class="services-grid">
-        <div class="service-card fade-in">
-          <span class="sc-icon">⚔</span>
-          <h3 class="sc-name">Red Teaming &amp; Adversarial Simulation</h3>
-          <p class="sc-desc">Full-scope adversarial simulations emulating real threat actors. From initial access through lateral movement to impact — tested against your actual defences, not a lab environment.</p>
+  <!-- ③ DIFFERENTIATORS -->
+  <section class="r12-section r12-diff">
+    <div class="r12-container">
+      <div class="r12-section-header">
+        <h2 class="r12-section-title">Why Rapture Twelve</h2>
+        <p class="r12-section-sub">We don't just identify vulnerabilities — we think like the adversaries targeting your organization.</p>
+      </div>
+      <div class="r12-diff-grid">
+        <div class="r12-diff-card">
+          <p class="r12-diff-num">01</p>
+          <h3 class="r12-diff-title">Offensive-Defensive Integration</h3>
+          <p class="r12-diff-text">Red teamers and SOC analysts work the same engagement. Attack findings directly shape defensive controls — not slide decks.</p>
         </div>
-        <div class="service-card fade-in">
-          <span class="sc-icon">◎</span>
-          <h3 class="sc-name">Vulnerability Assessment &amp; Penetration Testing</h3>
-          <p class="sc-desc">Systematic identification of exploitable weaknesses across web applications, APIs, network infrastructure, mobile, and cloud environments. From scoping to full written reporting.</p>
+        <div class="r12-diff-card">
+          <p class="r12-diff-num">02</p>
+          <h3 class="r12-diff-title">Intelligence-Driven Operations</h3>
+          <p class="r12-diff-text">Every engagement is enriched by live CTI. Findings are correlated across clients to surface emerging TTPs before they cause damage.</p>
         </div>
-        <div class="service-card fade-in">
-          <span class="sc-icon">⬡</span>
-          <h3 class="sc-name">AI-Driven Security Products</h3>
-          <p class="sc-desc">Proprietary autonomous security tooling: AI-powered penetration testing frameworks, adaptive threat detection systems, and LLM-assisted forensic analysis platforms in active development.</p>
+        <div class="r12-diff-card">
+          <p class="r12-diff-num">03</p>
+          <h3 class="r12-diff-title">AI at Scale, Humans at the Edge</h3>
+          <p class="r12-diff-text">Automated systems handle speed and volume. Every critical decision is validated by a human analyst — no false confidence from black-box outputs.</p>
         </div>
-        <div class="service-card fade-in">
-          <span class="sc-icon">◈</span>
-          <h3 class="sc-name">Malware Research &amp; Reverse Engineering</h3>
-          <p class="sc-desc">Static and dynamic malware analysis, unpacking, C2 infrastructure mapping, and behavioural decomposition. Supports incident response and threat intelligence production.</p>
-        </div>
-        <div class="service-card fade-in">
-          <span class="sc-icon">◉</span>
-          <h3 class="sc-name">Digital Forensics &amp; Incident Response</h3>
-          <p class="sc-desc">Post-incident evidence acquisition, timeline reconstruction, attribution analysis, and remediation guidance. Covers ransomware, data exfiltration, and insider threat scenarios.</p>
-        </div>
-        <div class="service-card fade-in">
-          <span class="sc-icon">☁</span>
-          <h3 class="sc-name">Security Training &amp; Awareness</h3>
-          <p class="sc-desc">Enterprise security training seminars, hands-on workshops, and organisation-specific threat awareness programmes — delivered to industry clients across sectors.</p>
+        <div class="r12-diff-card">
+          <p class="r12-diff-num">04</p>
+          <h3 class="r12-diff-title">Cross-Generational Knowledge</h3>
+          <p class="r12-diff-text">Veteran practitioners alongside IIT/NIT talent and CTF champions. Proven operational wisdom meets cutting-edge technique — continuously.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <hr class="section-rule" />
+  <!-- ④ PROJECTS -->
+  <section class="r12-section r12-projects">
+    <div class="r12-container">
+      <div class="r12-section-header">
+        <h2 class="r12-section-title">Selected Engagements</h2>
+        <p class="r12-section-sub">A sample of client work across forensics, security assessment, and product development.</p>
+      </div>
+      <div class="r12-projects-table">
+        <div class="r12-pt-row">
+          <p class="r12-pt-type">DFIR</p>
+          <p class="r12-pt-work">Forensic investigation and multi-method data recovery following ransomware encrypting all critical business data.</p>
+          <p class="r12-pt-impact">Restored operational continuity; hardened endpoint protection, backup architecture and access controls.</p>
+          <p class="r12-pt-outcome">87% recovery</p>
+        </div>
+        <div class="r12-pt-row">
+          <p class="r12-pt-type">DFIR</p>
+          <p class="r12-pt-work">Recovery from a mechanically failed 2TB HDD — source code, design assets, financials and 14 active client projects.</p>
+          <p class="r12-pt-impact">Full restoration of all critical business files; improved backup architecture and cloud integration.</p>
+          <p class="r12-pt-outcome">94% recovery</p>
+        </div>
+        <div class="r12-pt-row">
+          <p class="r12-pt-type">VAPT</p>
+          <p class="r12-pt-work">OWASP Top 10 assessment of a government-facing web application — authenticated and unauthenticated testing.</p>
+          <p class="r12-pt-impact">Critical and medium-risk findings patched; strengthened authentication, session controls and compliance posture.</p>
+          <p class="r12-pt-outcome">Critical CVEs</p>
+        </div>
+        <div class="r12-pt-row">
+          <p class="r12-pt-type">Secure AI</p>
+          <p class="r12-pt-work">On-premises LLM infrastructure for a law firm — RBAC, per-client encryption, air-gapped operation, RAG from matter-scoped repositories.</p>
+          <p class="r12-pt-impact">AI productivity without compromising attorney-client privilege or data sovereignty.</p>
+          <p class="r12-pt-outcome">Zero cloud</p>
+        </div>
+        <div class="r12-pt-row">
+          <p class="r12-pt-type">Product Dev</p>
+          <p class="r12-pt-work">Centralized multi-branch inventory and billing platform for Ultra Dimensions (Maguva) — automated SKU reconciliation, GST-compliant invoicing.</p>
+          <p class="r12-pt-impact">Eliminated billing discrepancies; unified financial governance with dashboard-driven analytics.</p>
+          <p class="r12-pt-outcome">Ultra Dimensions</p>
+        </div>
+        <div class="r12-pt-row">
+          <p class="r12-pt-type">Product Dev</p>
+          <p class="r12-pt-work">Full MVP for a compliance-driven cybersecurity platform — multi-cloud integration (AWS/Azure/GCP) and secure backend.</p>
+          <p class="r12-pt-impact">Production-ready platform enabling rapid market entry; full IP transfer to client.</p>
+          <p class="r12-pt-outcome">Stealth Startup</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- CTA -->
-  <section aria-label="Contact Rapture Twelve">
-    <div class="container">
-      <div class="contact-inner">
-        <p class="section-label">Engage</p>
-        <h2 class="contact-headline reveal-title">
-          <span class="line-wrap"><span class="inner">Let's work</span></span>
-          <span class="line-wrap accent-line"><span class="inner"><em>together.</em></span></span>
-        </h2>
-        <p class="contact-sub fade-in">
-          Consulting engagements, red team contracts, AI security product partnerships,
-          and long-term managed security relationships. No generic proposals — only tailored work.
-        </p>
-        <div class="hero-cta-row fade-in">
-          <a href="mailto:antonyshane@rapturetwelve.com" class="btn btn-primary">
-            <span class="btn-text">antonyshane@rapturetwelve.com</span>
-            <span class="btn-icon" aria-hidden="true">↗</span>
-            <span class="btn-fill" aria-hidden="true"></span>
+  <!-- ⑤ PRODUCTS -->
+  <section class="r12-section r12-products">
+    <div class="r12-container">
+      <div class="r12-section-header">
+        <h2 class="r12-section-title">Proprietary Products</h2>
+        <p class="r12-section-sub">AI-powered security tools built in-house for scale and precision.</p>
+      </div>
+      <div class="r12-product-grid">
+        <div class="r12-product-card">
+          <p class="r12-product-label">Product 01</p>
+          <h3 class="r12-product-title">Autonomous AI-Driven Pentesting Framework</h3>
+          <p class="r12-product-desc">A fully autonomous penetration-testing engine combining the complete Kali Linux toolset with AI-driven intelligence to discover, validate, and exploit vulnerabilities across network, application, and business-logic layers — without human intervention.</p>
+          <div class="r12-product-tags">
+            <span class="r12-product-tag">Fully Autonomous</span>
+            <span class="r12-product-tag">Adaptive Attack</span>
+            <span class="r12-product-tag">AI Exploit Intel</span>
+            <span class="r12-product-tag">CTF/HTB Proven</span>
+          </div>
+        </div>
+        <div class="r12-product-card">
+          <p class="r12-product-label">Product 02</p>
+          <h3 class="r12-product-title">CTI-Integrated ML-Native SOC Platform</h3>
+          <p class="r12-product-desc">Next-generation ML-native SOC solution with continuously trained models and a three-tiered intelligent detection architecture — optimised for resource efficiency and high-confidence threat validation with minimal false positives.</p>
+          <div class="r12-product-tags">
+            <span class="r12-product-tag">3-Tier ML Arch</span>
+            <span class="r12-product-tag">Resource Efficient</span>
+            <span class="r12-product-tag">CTI Trained</span>
+            <span class="r12-product-tag">Cross-Verification</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑦ CONTACT -->
+  <section class="r12-contact" id="contact">
+    <div class="r12-container">
+      <div class="r12-section-header">
+        <h2 class="r12-section-title">Your Next Engagement Starts Here</h2>
+        <p class="r12-section-sub">Ready to discuss your cybersecurity and AI requirements? Reach out directly.</p>
+      </div>
+      <div class="r12-contact-grid">
+        <div class="r12-contact-info">
+          <div class="r12-contact-block">
+            <h3>Antony Shane</h3>
+            <p>Founder &amp; CEO</p>
+            <div class="r12-contact-links">
+              <a href="tel:+919790791723" class="r12-contact-link">📞 +91 97907 91723</a>
+              <a href="mailto:antonyshane@rapturetwelve.com" class="r12-contact-link">✉ antonyshane@rapturetwelve.com</a>
+            </div>
+          </div>
+
+          <div class="r12-contact-block">
+            <h3>Kruthin Vinay</h3>
+            <p>Co-Founder &amp; COO</p>
+            <div class="r12-contact-links">
+              <a href="tel:+918925126949" class="r12-contact-link">📞 +91 89251 26949</a>
+              <a href="mailto:kruthinvinay@rapturetwelve.com" class="r12-contact-link">✉ kruthinvinay@rapturetwelve.com</a>
+            </div>
+          </div>
+
+
+          <a href="https://www.rapturetwelve.com" target="_blank" rel="noopener" class="r12-visit-btn">
+            Visit rapturetwelve.com ↗
           </a>
-          <a href="tel:+919790791723" class="btn btn-ghost">
-            <span class="btn-text">+91 97907 91723</span>
-          </a>
+        </div>
+
+        <div class="r12-form-wrap">
+          <form class="r12-form" id="r12-contact-form">
+            <div class="r12-form-row">
+              <div class="r12-form-group">
+                <label for="r12-name">Name *</label>
+                <input type="text" id="r12-name" name="name" placeholder="John Doe" required />
+              </div>
+              <div class="r12-form-group">
+                <label for="r12-org">Organisation *</label>
+                <input type="text" id="r12-org" name="organisation" placeholder="Company Name" required />
+              </div>
+            </div>
+            <div class="r12-form-row">
+              <div class="r12-form-group">
+                <label for="r12-role">Role</label>
+                <input type="text" id="r12-role" name="role" placeholder="CEO / Security Lead" />
+              </div>
+              <div class="r12-form-group">
+                <label for="r12-phone">Phone</label>
+                <input type="tel" id="r12-phone" name="phone" placeholder="+91 98765 43210" />
+              </div>
+            </div>
+            <div class="r12-form-group">
+              <label for="r12-email">Email *</label>
+              <input type="email" id="r12-email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="r12-form-group">
+              <label for="r12-message">Message *</label>
+              <textarea id="r12-message" name="message" placeholder="Describe your cybersecurity and AI requirements..." required></textarea>
+            </div>
+
+            <button type="submit" class="r12-submit">Send Secure Message</button>
+            <div class="r12-form-status" id="r12-form-status"></div>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <footer role="contentinfo">
-    <span>© 2026 Rapture Twelve Pvt Ltd</span>
-    <span>India</span>
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="../">Home</a>
-      <a href="../about/">About</a>
-      <a href="../experience/">Experience</a>
-      <a href="../projects/">Projects</a>
-      <a href="../research/">Research</a>
-      <a href="../zharnyx/">Zharnyx</a>
-      <a href="../contact/">Contact</a>
-    </nav>
+  <!-- FOOTER -->
+  <footer class="r12-footer">
+    <div class="r12-container">
+      <div class="r12-footer-inner">
+        <div>
+          <span class="r12-footer-brand-name">Rapture Twelve</span>
+          <p class="r12-footer-tagline">Infiltrate • Exploit • Secure</p>
+          <p style="color:rgba(240,237,232,0.35);font-size:0.72rem;margin-top:0.5rem;">DPIIT Certified · India · Est. 2025</p>
+        </div>
+        <nav class="r12-footer-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="https://www.rapturetwelve.com" target="_blank" rel="noopener">rapturetwelve.com ↗</a>
+        </nav>
+        <div class="r12-footer-contact">
+          <p>antonyshane@rapturetwelve.com</p>
+          <p>kruthinvinay@rapturetwelve.com</p>
+        </div>
+      </div>
+      <div class="r12-footer-bottom">
+        <p>© 2025 Rapture Twelve Pvt Ltd. All rights reserved. Defense-grade cybersecurity and AI solutions.</p>
+      </div>
+    </div>
   </footer>
 
   <script src="../js/pages.js" defer></script>
@@ -485,6 +1005,17 @@
       blurFactor: 0.92,
       speed: 2.00,
       zoom: 0.80
+    });
+
+    // Simple form handler
+    document.getElementById('r12-contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const status = document.getElementById('r12-form-status');
+      status.style.display = 'block';
+      status.className = 'r12-form-status success';
+      status.textContent = 'Message sent. We will be in touch shortly.';
+      this.reset();
+      setTimeout(() => { status.style.display = 'none'; }, 5000);
     });
   </script>
 </body>
