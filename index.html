@@ -383,80 +383,256 @@
   <hr class="section-rule" />
 
   <!-- ───────────────────────────────────────────────────
-       ⑦ CONTACT
+       ⑦ MANIFESTO
   ─────────────────────────────────────────────────── -->
-  <section id="contact" aria-labelledby="contact-title">
-    <div class="container">
-      <div class="contact-inner">
-        <p class="section-label">Contact</p>
+  <section id="manifesto" aria-label="Manifesto">
+    <style>
+      #manifesto {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+      }
+      /* Main content area */
+      .manifesto-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 5rem 3rem 4rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .manifesto-top-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+      }
+      .manifesto-eyebrow {
+        font-family: var(--fm);
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .manifesto-eyebrow::before {
+        content: '';
+        display: block;
+        width: 2.5rem;
+        height: 1px;
+        background: var(--accent);
+        opacity: 0.6;
+      }
+      .manifesto-lines {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .manifesto-line {
+        font-family: var(--fd);
+        font-size: clamp(4.5rem, 8.5vw, 9rem);
+        font-weight: 400;
+        line-height: 0.9;
+        letter-spacing: -0.04em;
+        color: var(--text);
+        padding-bottom: 0.05em;
+      }
+      .manifesto-line.gold { color: var(--accent); }
+      .manifesto-line.outline {
+        color: transparent;
+        -webkit-text-stroke: 1.5px rgba(237,233,227,0.3);
+      }
+      /* Right column */
+      .manifesto-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        padding-top: 4rem;
+        gap: 2.5rem;
+      }
+      .manifesto-quote {
+        font-family: var(--fd);
+        font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+        font-weight: 400;
+        color: var(--text);
+        line-height: 1.4;
+        letter-spacing: -0.02em;
+        border-left: 2px solid var(--accent);
+        padding-left: 1.5rem;
+        opacity: 0.85;
+      }
+      .manifesto-caption {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        line-height: 1.8;
+        max-width: 420px;
+      }
+      .manifesto-capabilities {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: 0.5rem;
+      }
+      .manifesto-cap {
+        font-family: var(--fm);
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        border: 1px solid rgba(200,169,110,0.2);
+        padding: 0.35rem 0.85rem;
+        background: rgba(200,169,110,0.04);
+        transition: color 0.2s, border-color 0.2s;
+      }
+      .manifesto-cap:hover {
+        color: var(--accent);
+        border-color: rgba(200,169,110,0.5);
+      }
+      /* Stats row */
+      .manifesto-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border-top: 1px solid rgba(200,169,110,0.12);
+        border-bottom: 1px solid rgba(200,169,110,0.12);
+        margin-top: 3rem;
+      }
+      .manifesto-stat {
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        border-right: 1px solid rgba(200,169,110,0.12);
+      }
+      .manifesto-stat:last-child { border-right: none; }
+      .manifesto-stat-num {
+        font-family: var(--fd);
+        font-size: clamp(2.8rem, 4.5vw, 4rem);
+        font-weight: 400;
+        color: var(--text);
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      .manifesto-stat-num span { color: var(--accent); }
+      .manifesto-stat-label {
+        font-family: var(--fm);
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+      }
+      /* Bottom CTA bar */
+      .manifesto-cta-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.8rem 3rem;
+        border-top: 1px solid rgba(200,169,110,0.12);
+        background: rgba(200,169,110,0.03);
+        max-width: 100%;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .manifesto-cta-text {
+        font-size: 0.82rem;
+        color: var(--text-dim);
+        line-height: 1.6;
+      }
+      .manifesto-cta-link {
+        font-family: var(--fd);
+        font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+        color: var(--accent);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+        border-bottom: 1px solid rgba(200,169,110,0.3);
+        padding-bottom: 0.1em;
+        transition: opacity 0.2s, border-color 0.2s;
+        white-space: nowrap;
+      }
+      .manifesto-cta-link:hover {
+        opacity: 0.7;
+        border-color: var(--accent);
+      }
+    </style>
 
-        <h2 id="contact-title" class="contact-headline reveal-title">
-          <span class="line-wrap"><span class="inner">Let's build</span></span>
-          <span class="line-wrap accent-line"><span class="inner"><em>something real.</em></span></span>
-        </h2>
 
-        <p class="contact-sub fade-in">
-          Open to consulting, research collaboration, offensive security engagements,
-          and interesting conversations. No cold pitches — only meaningful work.
-        </p>
-
-        <div class="contact-links">
-
-          <a href="mailto:antonyshane@rapturetwelve.com" class="c-link fade-in">
-            <div class="c-text">
-              <p class="c-label">Primary (Work)</p>
-              <p class="c-val">antonyshane@rapturetwelve.com</p>
-            </div>
-            <span class="c-arrow" aria-hidden="true">↗</span>
-            <span class="c-wipe" aria-hidden="true"></span>
-          </a>
-
-          <a href="mailto:antonymichealpeoshane@gmail.com" class="c-link fade-in">
-            <div class="c-text">
-              <p class="c-label">Personal</p>
-              <p class="c-val">antonymichealpeoshane@gmail.com</p>
-            </div>
-            <span class="c-arrow" aria-hidden="true">↗</span>
-            <span class="c-wipe" aria-hidden="true"></span>
-          </a>
-
-          <a href="tel:+919790791723" class="c-link fade-in">
-            <div class="c-text">
-              <p class="c-label">Phone</p>
-              <p class="c-val">+91 97907 91723</p>
-            </div>
-            <span class="c-arrow" aria-hidden="true">↗</span>
-            <span class="c-wipe" aria-hidden="true"></span>
-          </a>
-
-          <a href="https://antonyshane.com" target="_blank" rel="noopener" class="c-link fade-in">
-            <div class="c-text">
-              <p class="c-label">Website</p>
-              <p class="c-val">antonyshane.com</p>
-            </div>
-            <span class="c-arrow" aria-hidden="true">↗</span>
-            <span class="c-wipe" aria-hidden="true"></span>
-          </a>
-
+    <div class="manifesto-inner">
+      <!-- Top two-column layout -->
+      <div class="manifesto-top-row">
+        <!-- Left: Big words -->
+        <div>
+          <p class="manifesto-eyebrow fade-in">The work</p>
+          <div class="manifesto-lines">
+            <div class="manifesto-line fade-in">Build.</div>
+            <div class="manifesto-line outline fade-in">Break.</div>
+            <div class="manifesto-line gold fade-in">Secure.</div>
+          </div>
         </div>
 
-        <div class="social-row fade-in">
-          <a href="https://linkedin.com/in/antonyshane" target="_blank" rel="noopener" class="social-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://github.com/Antonyshane14" target="_blank" rel="noopener" class="social-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            GitHub
-          </a>
-          <a href="https://antonyshane.com" target="_blank" rel="noopener" class="social-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            antonyshane.com
-          </a>
+        <!-- Right: Quote + capabilities -->
+        <div class="manifesto-right fade-in">
+          <p class="manifesto-quote">
+            "To defend a system effectively, you must first understand how to break it."
+          </p>
+          <p class="manifesto-caption">
+            Building ventures that operate at the frontier of offensive security and AI.
+            Two companies. One research agenda. One mission.
+          </p>
+          <div class="manifesto-capabilities">
+            <span class="manifesto-cap">Red Teaming</span>
+            <span class="manifesto-cap">Malware Research</span>
+            <span class="manifesto-cap">AI/ML</span>
+            <span class="manifesto-cap">VAPT</span>
+            <span class="manifesto-cap">Exploit Dev</span>
+            <span class="manifesto-cap">EDR Evasion</span>
+            <span class="manifesto-cap">LLM Security</span>
+            <span class="manifesto-cap">Digital Forensics</span>
+          </div>
         </div>
+      </div>
 
+      <!-- Stats -->
+      <div class="manifesto-stats fade-in">
+        <div class="manifesto-stat">
+          <div class="manifesto-stat-num">2<span>+</span></div>
+          <div class="manifesto-stat-label">Active Ventures</div>
+        </div>
+        <div class="manifesto-stat">
+          <div class="manifesto-stat-num">25<span>+</span></div>
+          <div class="manifesto-stat-label">Team Members</div>
+        </div>
+        <div class="manifesto-stat">
+          <div class="manifesto-stat-num">11<span>+</span></div>
+          <div class="manifesto-stat-label">Projects Delivered</div>
+        </div>
+        <div class="manifesto-stat">
+          <div class="manifesto-stat-num">4<span>+</span></div>
+          <div class="manifesto-stat-label">Research Initiatives</div>
+        </div>
       </div>
     </div>
+
+    <!-- Bottom CTA bar -->
+    <div class="manifesto-cta-bar fade-in">
+      <p class="manifesto-cta-text">
+        Rapture Twelve · Offensive security operations globally.<br>
+        Zharnyx · Training the next generation of security engineers.
+      </p>
+      <a href="contact/" class="manifesto-cta-link">Get in touch ↗</a>
+    </div>
+
   </section>
 
   <!-- ───────────────────────────────────────────────────
