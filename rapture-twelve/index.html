@@ -42,10 +42,10 @@
     /* ── HERO ── */
     .r12-hero {
       position: relative;
-      min-height: 72vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 8rem 0 5rem;
+      padding: 8rem 0 8rem;
       overflow: hidden;
     }
     /* golden grid overlay activates via body:has(.page-hero)::after in style.css */
@@ -627,6 +627,15 @@
     }
     .r12-visit-btn:hover { background: rgba(200,169,110,0.1); border-color: var(--r12-gold); }
 
+    /* ── SCROLL HINT (hero) ── */
+    .r12-hero .scroll-hint {
+      color: var(--r12-gold);
+      opacity: 0.6;
+    }
+    .r12-hero .scroll-line::after {
+      background: linear-gradient(to bottom, var(--r12-gold), transparent);
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       .r12-services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -695,8 +704,13 @@
       <p class="r12-subtitle">AI-driven cybersecurity leveraging offensive and defensive expertise to anticipate and outsmart evolving threats. DPIIT-certified, globally operational.</p>
       <div class="r12-hero-cta">
         <a href="#contact" class="r12-btn-primary">Contact Us ↗</a>
-        <a href="https://www.rapturetwelve.com" target="_blank" rel="noopener" class="r12-btn-secondary">← Visit Website</a>
+        <a href="https://www.rapturetwelve.com" target="_blank" rel="noopener" class="r12-btn-secondary">Visit Website</a>
       </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
