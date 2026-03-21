@@ -181,9 +181,11 @@ section { padding: 7rem 0; }
   font-family: var(--fd);
   font-size: clamp(2.4rem, 5vw, 4rem);
   font-weight: 400;            /* DM Serif Display looks best at regular weight */
-  line-height: 1.05;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   margin-bottom: 2.5rem;
+  overflow: visible;
+  padding-bottom: 0.1em;
 }
 
 .section-title.reveal-title { margin-bottom: 3rem; }
@@ -203,11 +205,12 @@ section { padding: 7rem 0; }
 }
 
 .section-aside {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: var(--text-dim);
   line-height: 1.9;
   text-align: right;
   padding-top: 1.5rem;
+  white-space: nowrap;
 }
 
 /* ──────────────────────────────────────────────────────────
@@ -535,7 +538,8 @@ section { padding: 7rem 0; }
   text-align: center;
 }
 
-.hero-name .line-wrap {
+.hero-name .line-wrap,
+.section-title .line-wrap {
   overflow: visible;
 }
 
