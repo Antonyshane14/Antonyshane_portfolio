@@ -1300,6 +1300,7 @@ body:has(.page-hero)::after {
   font-size: 0.76rem;
   color: var(--text-dim);
   line-height: 1.75;
+  text-align: justify;
   flex: 1;
   margin-bottom: 1.2rem;
 }
