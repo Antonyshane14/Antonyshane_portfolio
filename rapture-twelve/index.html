@@ -33,19 +33,21 @@
 
     body { color: var(--r12-white); font-family: var(--r12-body); }
 
-    /* ── NAV (portfolio style) ── */
-    #nav { background: rgba(10,10,10,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(200,169,110,0.15); }
-    #nav .nav-logo { color: var(--r12-white); }
-    #nav .nav-links a { color: rgba(240,237,232,0.6); }
-    #nav .nav-links a:hover, #nav .nav-links a[aria-current] { color: var(--r12-white); }
+    /* ── NAV (matches portfolio style.css exactly) ── */
+    #nav { background: transparent; backdrop-filter: none; border-bottom: none; }
+    #nav.scrolled { background: rgba(10,10,10,0.88); backdrop-filter: blur(24px) saturate(1.3); border-bottom: 1px solid rgba(237,233,227,0.06); }
+    #nav .nav-logo { color: #ede9e3; }
+    #nav .nav-links a { color: #a09b95; }
+    #nav .nav-links a:hover,
+    #nav .nav-links a[aria-current] { color: #ede9e3; }
 
     /* ── HERO ── */
     .r12-hero {
       position: relative;
       min-height: 100vh;
       display: flex;
-      align-items: center;
-      padding: 8rem 0 8rem;
+      align-items: flex-start;
+      padding: 0;
       overflow: hidden;
     }
     /* golden grid overlay activates via body:has(.page-hero)::after in style.css */
@@ -53,7 +55,7 @@
       position: relative; z-index: 2;
       max-width: 1160px;
       margin: 0 auto;
-      padding: 0 3rem;
+      padding: 9rem 3rem 6rem;
       width: 100%;
     }
     .r12-breadcrumb {
@@ -187,8 +189,25 @@
       gap: 1.5rem;
       margin-top: 1rem;
     }
+    /* entrance animation */
+    .r12-cap-card {
+      opacity: 0;
+      transform: translateY(40px) scale(0.97);
+      transition:
+        opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+    }
+    .r12-cap-card.r12-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
     .r12-cap-card {
       position: relative;
+      overflow: hidden;
       background: rgba(12,12,12,0.75);
       border: 1px solid rgba(200,169,110,0.12);
       border-top: 2px solid var(--r12-gold);
@@ -200,13 +219,35 @@
       align-items: center;
       text-align: center;
       justify-content: flex-start;
-      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
-    .r12-cap-card:hover {
+    .r12-cap-card.r12-visible:hover {
       border-color: rgba(200,169,110,0.45);
       border-top-color: var(--r12-gold);
-      transform: translateY(-5px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(200,169,110,0.1);
+      background: rgba(20,16,10,0.9);
+      transform: translateY(-7px) scale(1.015);
+      box-shadow:
+        0 20px 48px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(200,169,110,0.15),
+        0 0 30px rgba(200,169,110,0.06);
+    }
+
+    /* shimmer sweep on hover */
+    .r12-cap-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        115deg,
+        transparent 30%,
+        rgba(200,169,110,0.06) 50%,
+        transparent 70%
+      );
+      transform: translateX(-100%);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .r12-cap-card.r12-visible:hover::after {
+      transform: translateX(100%);
     }
     .r12-cap-card::before {
       content: attr(data-num);
@@ -1042,6 +1083,26 @@
       this.reset();
       setTimeout(() => { status.style.display = 'none'; }, 5000);
     });
+  </script>
+
+  <script>
+    // Staggered entrance animation for capability cards
+    // Fires a wave when the grid container comes into view
+    const capGrid = document.querySelector('.r12-cap-grid');
+    const capCards = Array.from(document.querySelectorAll('.r12-cap-card'));
+
+    const capObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          capCards.forEach((card, i) => {
+            setTimeout(() => card.classList.add('r12-visible'), i * 110);
+          });
+          capObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    if (capGrid) capObserver.observe(capGrid);
   </script>
 </body>
 </html>

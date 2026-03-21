@@ -1802,21 +1802,21 @@ body:has(.page-hero)::after {
 /* ──────────────────────────────────────────────────────────
    FOOTER
 ────────────────────────────────────────────────────────── */
-footer {
-  padding: 1.75rem 3rem;
+footer[role="contentinfo"] {
   border-top: 1px solid var(--border);
+  padding: 1.5rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.63rem;
-  color: var(--text-dim);
-  letter-spacing: 0.08em;
-  flex-wrap: wrap;
-  gap: 0.75rem;
 }
 
-footer a { transition: color var(--t-fast); }
-footer a:hover { color: var(--accent); }
+footer[role="contentinfo"] span {
+  font-family: var(--fm);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
 
 /* ──────────────────────────────────────────────────────────
    RESPONSIVE — 1024px
@@ -1880,7 +1880,7 @@ footer a:hover { color: var(--accent); }
   .container { padding: 0 1.5rem; }
   section { padding: 5rem 0; }
 
-  footer { padding: 1.5rem; }
+  footer[role="contentinfo"] { padding: 1.25rem 1.5rem; }
 
   /* Timeline mobile styles */
   .timeline::before {
