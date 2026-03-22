@@ -490,15 +490,54 @@
 
     /* ════════════════ Responsive ════════════════ */
     @media (max-width: 768px) {
-      .about-grid       { grid-template-columns: 1fr; gap: 3rem; }
+      .page-hero { min-height: auto; padding: 6rem 0 3rem; }
+      .page-hero-inner { padding: 0 1.5rem; }
+      .page-hero-name { font-size: clamp(2.2rem, 10vw, 3.2rem); margin-bottom: 1.25rem; }
+      .page-hero-sub { font-size: 0.85rem; margin-bottom: 1.75rem; }
+      .breadcrumb { font-size: 0.75rem; margin-bottom: 1.75rem; }
+      .hero-cta-row { flex-direction: column; gap: 0.75rem; }
+      .hero-cta-row .btn { width: 100%; justify-content: center; }
+      .hero-pills { gap: 0.5rem; margin-top: 1.75rem; padding-top: 1.5rem; }
+      .hero-pill { padding: 0.5rem 0.85rem; font-size: 0.6rem; }
+      .hero-pill strong { font-size: 0.9rem; }
+      .page-hero .scroll-hint { bottom: -3rem; }
 
-      .tracks-grid      { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .diff-item { gap: 1rem; }
 
-      .faq-grid         { grid-template-columns: 1fr; }
+      .founders-row { grid-template-columns: 1fr; }
+      .founder-card { border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 1.5rem; }
+      .founder-card:last-child { border-bottom: none; }
+      .founder-name { font-size: 1.3rem; }
+
+      .pull-quote { padding: 3.5rem 0; }
+      .pull-quote-text { font-size: clamp(1.15rem, 5vw, 1.6rem); }
+
+      .program-intro { font-size: 0.82rem; margin-bottom: 2.5rem; }
+      .timeline { padding-left: 2.5rem; }
+      .tl-dot { left: -2rem; }
+      .tl-phase { padding-bottom: 2.5rem; }
+      .tl-title { font-size: 1.1rem; }
+      .tl-desc { font-size: 0.75rem; }
+
+      .tracks-grid { grid-template-columns: 1fr; }
+      .track-card { padding: 2rem 1.5rem; }
+      .track-name { font-size: 1.05rem; }
+
+      .faq-grid { grid-template-columns: 1fr; }
       .faq-item:nth-child(2) { border-top: none; }
-      .hero-stats-bar   { flex-wrap: wrap; gap: 2rem; }
-      .timeline         { padding-left: 3rem; }
-      .tl-dot           { left: -2.4rem; }
+      .faq-item { padding: 1.5rem 0; }
+      .faq-q { font-size: 0.85rem; }
+      .faq-a { font-size: 0.72rem; }
+
+      .cta-section { padding: 5rem 0; }
+      .cta-headline { font-size: clamp(2rem, 8vw, 3rem); }
+      .cta-sub { font-size: 0.78rem; }
+      .cta-btns { flex-direction: column; }
+      .cta-btns .btn { width: 100%; justify-content: center; }
+
+      .section-label { font-size: 0.55rem; }
+      .section-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
     }
   </style>
 </head>

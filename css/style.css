@@ -1897,10 +1897,15 @@ footer[role="contentinfo"] span {
   .nav-burger { display: flex; }
 
   .hero-inner {
-    padding: 7.5rem 1.5rem 5rem;
+    padding: 6rem 1.5rem 3rem;
   }
 
-  .hero-stats { gap: 2rem; }
+  .hero-name { font-size: clamp(2.8rem, 12vw, 4.5rem); white-space: normal; }
+  .hero-eyebrow { font-size: 0.62rem; margin-bottom: 1.5rem; }
+  .hero-tagline { font-size: 0.85rem; margin-bottom: 2rem; }
+  .word-swap { min-width: auto; }
+
+  .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
 
   .about-grid {
     grid-template-columns: 1fr;
@@ -1929,9 +1934,26 @@ footer[role="contentinfo"] span {
   .d-item:last-child { border-bottom: none; }
 
   .container { padding: 0 1.5rem; }
-  section { padding: 5rem 0; }
+  section { padding: 4rem 0; }
 
-  footer[role="contentinfo"] { padding: 1.25rem 1.5rem; }
+  footer[role="contentinfo"] { padding: 1.25rem 1.5rem; font-size: 0.65rem; }
+
+  /* Global heading sizes for mobile */
+  .section-label { font-size: 0.55rem; letter-spacing: 0.14em; }
+  .section-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+
+  /* Buttons full-width on mobile */
+  .hero-cta-row { flex-direction: column; gap: 0.75rem; }
+  .hero-cta-row .btn { width: 100%; justify-content: center; text-align: center; }
+
+  /* Hero stats wrap */
+  .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+
+  /* Scroll hint */
+  .scroll-hint { display: none; }
+
+  /* Section rules */
+  .section-rule { margin: 0 1.5rem; }
 
   /* Timeline mobile styles */
   .timeline::before {

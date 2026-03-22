@@ -182,6 +182,18 @@
       color: var(--text-dim);
       opacity: 0.5;
     }
+
+    @media (max-width: 768px) {
+      .contact-page { padding: 6rem 1.5rem 3rem; }
+      .cp-heading { font-size: clamp(2.5rem, 10vw, 4rem); margin-bottom: 2rem; }
+      .cp-sub { font-size: 0.88rem; }
+      .cp-rows { grid-template-columns: 1fr; }
+      .cp-row { border-right: none; padding: 1.5rem 0; }
+      .cp-row:last-child { border-bottom: none; }
+      .cp-socials { flex-wrap: wrap; }
+      .cp-social-btn { font-size: 0.6rem; padding: 0.45rem 0.85rem; }
+      .cp-bottom { flex-direction: column; align-items: flex-start; }
+    }
   </style>
 </head>
 

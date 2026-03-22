@@ -114,6 +114,14 @@
     .breadcrumb a { color: var(--accent); transition: opacity 0.2s; }
     .breadcrumb a:hover { opacity: 0.75; }
     .breadcrumb span { opacity: 0.4; }
+
+    @media (max-width: 768px) {
+      .page-hero { min-height: auto; padding: 6rem 0 3rem; }
+      .page-hero-inner { padding: 0 1.5rem; }
+      .page-hero-name { font-size: clamp(2.2rem, 10vw, 3.2rem); margin-bottom: 1.25rem; }
+      .page-hero-sub { font-size: 0.82rem; margin-bottom: 1.75rem; }
+      .breadcrumb { font-size: 0.75rem; margin-bottom: 1.75rem; }
+    }
   </style>
 </head>
 

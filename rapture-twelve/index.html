@@ -686,11 +686,27 @@
       .r12-footer-inner { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
+      .r12-hero { min-height: auto; }
+      .r12-hero-inner { padding: 6rem 1.5rem 3rem; }
+      .r12-company-name, .r12-company-sub { font-size: clamp(2.2rem, 10vw, 3.5rem); }
+      .r12-subtitle { font-size: 0.82rem; }
+      .r12-breadcrumb { font-size: 0.68rem; margin-bottom: 1.75rem; }
+      .r12-hero-cta { flex-direction: column; }
+      .r12-btn-primary, .r12-btn-secondary { width: 100%; justify-content: center; text-align: center; }
+      .r12-container { padding: 0 1.5rem; }
+      .r12-section { padding: 4rem 0; }
+      .r12-section-title { font-size: clamp(1.1rem, 5vw, 1.6rem); }
+      .r12-section-sub { font-size: 0.82rem; }
+      .r12-cap-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .r12-cap-card { padding: 2rem 1.5rem; }
       .r12-services-grid { grid-template-columns: 1fr; }
-      .r12-diff-grid { grid-template-columns: 1fr; }
+      .r12-diff-grid { grid-template-columns: 1fr; border-radius: 6px; }
+      .r12-diff-card { padding: 1.5rem; }
       .r12-leaders-grid { grid-template-columns: 1fr; }
-      .r12-pt-row { grid-template-columns: 1fr; }
+      .r12-pt-row { grid-template-columns: 1fr; gap: 0.75rem; }
       .r12-pt-type, .r12-pt-outcome { display: none; }
+      .r12-product-grid { grid-template-columns: 1fr; }
+      .r12-product-card { padding: 2rem 1.5rem; }
       .r12-form-row { grid-template-columns: 1fr; }
       .r12-footer-inner { grid-template-columns: 1fr; }
     }
