@@ -4,25 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../favicon.png" />
-  <title>Zharnyx Pvt Ltd - Cybersecurity EdTech, Workforce-Ready Security Training, India</title>
-  <meta name="description" content="Zharnyx Pvt Ltd is a cybersecurity EdTech startup co-founded by Antony Shane. Delivering hybrid practical-theoretical security training with real-world simulations, a workforce-ready alternative to traditional cybersecurity education." />
-  <meta name="keywords" content="Zharnyx, cybersecurity EdTech India, cybersecurity training platform, hands-on security education, red team training, offensive security course India, Antony Shane EdTech, Coimbatore cybersecurity" />
+  <title>Zharnyx Private Limited - Cybersecurity Academy, Deployment-Ready Training</title>
+  <meta name="description" content="Zharnyx Private Limited. India's first track-specialized, deployment-ready cybersecurity academy. 7-month career tracks in SOC, VAPT, Cloud Security, and DFIR." />
+  <meta name="keywords" content="Zharnyx, cybersecurity academy, cybersecurity training, SOC analyst training, VAPT course, cloud security course, DFIR training, Antony Shane, Sanjai R, hands-on cybersecurity, deployment-ready" />
   <meta name="author" content="Antony Shane" />
   <link rel="canonical" href="https://www.antonyshane.com/zharnyx/" />
 
-  <!-- Open Graph -->
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Zharnyx Pvt Ltd - Cybersecurity EdTech, India" />
-  <meta property="og:description" content="Workforce-ready cybersecurity education through real-world security simulations and adversarial labs. Co-founded by Antony Shane." />
+  <meta property="og:title"       content="Zharnyx Private Limited - Cybersecurity Academy" />
+  <meta property="og:description" content="India's first track-specialized, deployment-ready cyber academy. 7-month career tracks in SOC, VAPT, Cloud Security & DFIR." />
   <meta property="og:url"         content="https://www.antonyshane.com/zharnyx/" />
   <meta property="og:site_name"   content="Antony Shane" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary" />
-  <meta name="twitter:title"       content="Zharnyx | Cybersecurity EdTech India" />
-  <meta name="twitter:description" content="Hands-on cybersecurity training with real-world simulations · Workforce-ready · Co-founded by Antony Shane" />
+  <meta name="twitter:title"       content="Zharnyx | Cybersecurity Academy" />
+  <meta name="twitter:description" content="Track-specialized cybersecurity training. SOC / VAPT / Cloud / DFIR / 7-Month Career Tracks" />
 
-  <!-- JSON-LD: Organization + EducationalOrganization -->
   <script type="application/ld+json">
   [
     {
@@ -36,25 +32,15 @@
     {
       "@context": "https://schema.org",
       "@type": ["Organization", "EducationalOrganization"],
-      "name": "Zharnyx Pvt Ltd",
+      "name": "Zharnyx Private Limited",
       "url": "https://antonyshane.com/zharnyx/",
-      "description": "Cybersecurity EdTech startup delivering hybrid practical-theoretical training with real-world security simulations — a workforce-ready alternative to traditional cybersecurity education.",
+      "description": "India's first track-specialized, deployment-ready cybersecurity academy.",
       "foundingDate": "2026",
-      "foundingLocation": "Coimbatore, Tamil Nadu, India",
-      "founder": {
-        "@type": "Person",
-        "name": "Antony Shane",
-        "url": "https://antonyshane.com"
-      },
-      "teaches": [
-        "Offensive Security",
-        "Red Teaming",
-        "Penetration Testing",
-        "Malware Analysis",
-        "Digital Forensics",
-        "AI in Cybersecurity"
-      ],
-      "educationalCredentialAwarded": "Cybersecurity practitioner certification"
+      "founder": [
+        { "@type": "Person", "name": "Sanjai R" },
+        { "@type": "Person", "name": "Harish" },
+        { "@type": "Person", "name": "Antony Shane", "url": "https://antonyshane.com" }
+      ]
     }
   ]
   </script>
@@ -67,8 +53,9 @@
   <link rel="stylesheet" href="../css/style.css" />
 
   <style>
+    /* ════════════════ HERO ════════════════ */
     .page-hero {
-      min-height: 65vh;
+      min-height: 68vh;
       display: flex;
       align-items: center;
       padding: 8rem 0 5rem;
@@ -78,9 +65,9 @@
     .page-hero::after {
       content: '';
       position: absolute;
-      top: 30%; right: 8%;
-      width: 520px; height: 520px;
-      background: radial-gradient(circle, rgba(200,169,110,0.06) 0%, transparent 65%);
+      top: 25%; right: 5%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(200,169,110,0.07) 0%, transparent 60%);
       pointer-events: none;
     }
     .page-hero-inner {
@@ -100,7 +87,7 @@
     .page-hero-sub {
       font-size: 0.88rem;
       color: var(--text-dim);
-      max-width: 580px;
+      max-width: 540px;
       line-height: 1.9;
       margin-bottom: 2.25rem;
     }
@@ -118,125 +105,385 @@
     .breadcrumb a:hover { opacity: 0.75; }
     .breadcrumb span { opacity: 0.4; }
 
-    /* Pillars */
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      margin-top: 3rem;
+    /* Hero stats */
+    .hero-stats-bar {
+      display: flex;
+      gap: 3.5rem;
+      padding-top: 2.5rem;
+      margin-top: 0.5rem;
+      border-top: 1px solid var(--border);
     }
-    .pillar-card {
-      background: var(--bg);
-      padding: 2.5rem;
-      transition: background var(--t-mid);
-    }
-    .pillar-card:hover { background: var(--bg-2); }
-    .pc-num {
+    .stat-num {
       font-family: var(--fd);
-      font-size: 2.5rem;
+      font-size: 1.75rem;
       color: var(--accent);
-      opacity: 0.25;
       line-height: 1;
-      margin-bottom: 1rem;
+      margin-bottom: 0.35rem;
     }
-    .pc-title {
-      font-family: var(--fd);
-      font-size: 1.15rem;
-      margin-bottom: 0.75rem;
-    }
-    .pc-desc {
-      font-size: 0.78rem;
-      color: var(--text-dim);
-      line-height: 1.85;
+    .stat-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
     }
 
-    /* Why block */
-    .why-grid {
+    /* ════════════════ ABOUT — asymmetric 2-col ════════════════ */
+    .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 5rem;
       align-items: start;
     }
-    .wg-body .section-title { margin-bottom: 1.75rem; }
-    .wg-p {
+    .about-body .section-title { margin-bottom: 1.75rem; }
+    .about-p {
       font-size: 0.87rem;
       color: var(--text-dim);
       line-height: 1.9;
       margin-bottom: 1.35rem;
     }
-    .wg-list {
-      margin-top: 2rem;
+    .diff-list {
+      margin-top: 0;
       display: flex;
       flex-direction: column;
     }
-    .wg-item {
+    .diff-item {
       display: flex;
       gap: 1.25rem;
       align-items: flex-start;
-      padding: 1.25rem 0;
+      padding: 1.15rem 0;
       border-bottom: 1px solid var(--border);
+      transition: transform 0.3s ease;
     }
-    .wg-item:first-child { border-top: 1px solid var(--border); }
-    .wi-icon {
+    .diff-item:first-child { border-top: 1px solid var(--border); }
+    .diff-item:hover { transform: translateX(6px); }
+    .diff-icon {
       font-size: 0.85rem;
       color: var(--accent);
       flex-shrink: 0;
       padding-top: 0.1rem;
+      transition: transform 0.3s ease;
     }
-    .wi-text h4 {
+    .diff-item:hover .diff-icon { transform: translateX(3px); }
+    .diff-text h4 {
       font-family: var(--fd);
       font-size: 0.9rem;
       font-weight: 400;
       margin-bottom: 0.2rem;
     }
-    .wi-text p {
-      font-size: 0.75rem;
+    .diff-text p {
+      font-size: 0.73rem;
       color: var(--text-dim);
       line-height: 1.7;
     }
 
-    /* Curriculum */
-    .curriculum-list {
+    /* ════════════════ FOUNDERS ════════════════ */
+    .founders-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 3.5rem;
+      border: 1px solid var(--border);
+    }
+    .founder-card {
+      padding: 2.5rem 2.25rem;
+      border-right: 1px solid var(--border);
+      background: linear-gradient(160deg, rgba(200,169,110,0.13) 0%, transparent 65%);
+      transition: background 0.35s ease;
+    }
+    .founder-card:last-child { border-right: none; }
+    .founder-card:hover {
+      background: linear-gradient(160deg, rgba(200,169,110,0.22) 0%, rgba(200,169,110,0.04) 65%);
+    }
+    .founder-name {
+      font-family: var(--fd);
+      font-size: 1.55rem;
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+    }
+    .founder-role {
+      font-size: 0.57rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.1rem;
+    }
+    .founder-desc {
+      font-size: 0.73rem;
+      color: var(--text-dim);
+      line-height: 1.85;
+    }
+
+    @media (max-width: 768px) {
+      .founders-row { grid-template-columns: 1fr; }
+      .founder-card { border-right: none; border-bottom: 1px solid var(--border); }
+      .founder-card:last-child { border-bottom: none; }
+    }
+
+    /* ════════════════ PULL-QUOTE BREAK ════════════════ */
+    .pull-quote {
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .pull-quote-text {
+      font-family: var(--fd);
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 400;
+      line-height: 1.35;
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text);
+      opacity: 0.85;
+    }
+    .pull-quote-text em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    /* ════════════════ PROGRAM — vertical timeline ════════════════ */
+    .program-intro {
+      font-size: 0.87rem;
+      color: var(--text-dim);
+      line-height: 1.9;
+      max-width: 640px;
+      margin-bottom: 3.5rem;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 4rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent-line) 0%, var(--border) 100%);
+    }
+    .tl-phase {
+      position: relative;
+      padding-bottom: 3.5rem;
+    }
+    .tl-phase:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute;
+      left: -3.4rem;
+      top: 0.15rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--accent-line);
+    }
+    .tl-duration {
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .tl-title {
+      font-family: var(--fd);
+      font-size: 1.25rem;
+      margin-bottom: 0.65rem;
+    }
+    .tl-desc {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      line-height: 1.85;
+      max-width: 600px;
+      margin-bottom: 1.25rem;
+    }
+    .tl-checks {
+      list-style: none;
+      padding: 0;
+    }
+    .tl-checks li {
+      font-size: 0.73rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+      padding: 0.25rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .tl-checks li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.68rem;
+    }
+
+    /* ════════════════ TRACKS — staggered cards with glow ════════════════ */
+    .tracks-wrap {
+      margin-top: 3.5rem;
+    }
+    .tracks-wrap > .section-label { margin-bottom: 2rem; }
+    .tracks-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--border);
+    }
+    .track-card {
+      background: var(--bg-2);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.4s ease, transform 0.3s ease;
+    }
+    .track-card::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -50%;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(200,169,110,0.07) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+    .track-card:hover { background: var(--bg-3); }
+    .track-card:hover::before { opacity: 1; }
+    .track-deliverable { margin-top: auto; }
+    .track-num {
+      font-family: var(--fd);
+      font-size: 4rem;
+      color: var(--accent);
+      opacity: 0.08;
+      line-height: 1;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+    }
+    .track-tag {
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.85rem;
+      display: inline-block;
+    }
+    .track-name {
+      font-family: var(--fd);
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+    .track-desc {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+    .track-deliverable {
+      font-size: 0.63rem;
+      color: var(--text-dim);
+      opacity: 0.7;
+      border-top: 1px solid var(--border);
+      padding-top: 0.85rem;
+      line-height: 1.7;
+    }
+    .track-deliverable strong {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* ════════════════ FAQ — 2-col layout ════════════════ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 4rem;
       margin-top: 3rem;
     }
-    .cl-item {
-      background: var(--bg-2);
-      padding: 1.75rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      transition: background var(--t-mid);
+    .faq-item {
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: transform 0.2s ease;
     }
-    .cl-item:hover { background: var(--bg-3); }
-    .cl-name {
+    .faq-item:nth-child(1),
+    .faq-item:nth-child(2) { border-top: 1px solid var(--border); }
+    .faq-item:hover { transform: translateX(4px); }
+    .faq-q {
       font-family: var(--fd);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.65rem;
     }
-    .cl-tag {
-      font-size: 0.57rem;
+    .faq-q::before {
+      content: 'Q';
+      font-size: 0.55rem;
       letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.55rem;
-      border: 1px solid var(--accent-line);
       color: var(--accent);
-      white-space: nowrap;
       flex-shrink: 0;
+      padding: 0.15rem 0.4rem;
+      border: 1px solid var(--accent-line);
+    }
+    .faq-a {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      line-height: 1.85;
+      padding-left: 1.85rem;
     }
 
-    .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a { font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.1em; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--text); }
+    /* ════════════════ CTA — centered, larger ════════════════ */
+    .cta-section {
+      padding: 8rem 0;
+      text-align: center;
+      position: relative;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(200,169,110,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .cta-headline {
+      font-family: var(--fd);
+      font-size: clamp(3rem, 6.5vw, 5.5rem);
+      font-weight: 400;
+      line-height: 0.97;
+      letter-spacing: -0.03em;
+      margin-bottom: 2rem;
+    }
+    .cta-headline em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .cta-sub {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 0.85rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
+    /* ════════════════ Responsive ════════════════ */
     @media (max-width: 768px) {
-      .pillars-grid    { grid-template-columns: 1fr; }
-      .why-grid        { grid-template-columns: 1fr; gap: 3rem; }
-      .curriculum-list { grid-template-columns: 1fr; }
+      .about-grid       { grid-template-columns: 1fr; gap: 3rem; }
+
+      .tracks-grid      { grid-template-columns: 1fr; }
+
+      .faq-grid         { grid-template-columns: 1fr; }
+      .faq-item:nth-child(2) { border-top: none; }
+      .hero-stats-bar   { flex-wrap: wrap; gap: 2rem; }
+      .timeline         { padding-left: 3rem; }
+      .tl-dot           { left: -2.4rem; }
     }
   </style>
 </head>
@@ -244,9 +491,8 @@
 <body>
   <div id="vanta-bg"></div>
 
-  <!-- Mobile navigation overlay -->
   <div id="mobile-nav" aria-label="Mobile navigation" role="dialog" aria-modal="true" hidden>
-    <button class="mobile-close" id="close-mobile-nav" aria-label="Close menu">✕</button>
+    <button class="mobile-close" id="close-mobile-nav" aria-label="Close menu">&#10005;</button>
     <a href="../"                class="mobile-nav-link">Home</a>
     <a href="../about/"          class="mobile-nav-link">My Journey</a>
     <a href="../experience/"     class="mobile-nav-link">Experience</a>
@@ -275,7 +521,7 @@
     </button>
   </nav>
 
-  <!-- PAGE HERO -->
+  <!-- ═══════ HERO ═══════ -->
   <section class="page-hero" aria-label="Zharnyx overview">
     <div class="page-hero-inner">
       <p class="breadcrumb">
@@ -285,127 +531,262 @@
       </p>
       <h1 class="page-hero-name">
         <span class="line-wrap"><span class="inner">Zharnyx</span></span>
-        <span class="line-wrap accent-line"><span class="inner">Pvt Ltd.</span></span>
+        <span class="line-wrap accent-line"><span class="inner"><em>Private Limited.</em></span></span>
       </h1>
       <p class="page-hero-sub">
-        A cybersecurity EdTech platform engineered from practice, not theory.
-        Hybrid simulations, adversarial labs, and real-world mission scenarios —
-        preparing the next generation of security professionals for threats that actually exist.
+        India's first track-specialized, deployment-ready cybersecurity
+        academy. 7-month programs that turn beginners into job-ready
+        security professionals. Labs, not lectures.
       </p>
       <div class="hero-cta-row">
         <a href="mailto:antonyshane@rapturetwelve.com" class="btn btn-primary">
           <span class="btn-text">Get involved</span>
-          <span class="btn-icon" aria-hidden="true">↗</span>
+          <span class="btn-icon" aria-hidden="true">&nearr;</span>
           <span class="btn-fill" aria-hidden="true"></span>
         </a>
-        <a href="../index.html" class="btn btn-ghost">
-          <span class="btn-text">← Back to portfolio</span>
+        <a href="https://www.zharnyx.com" target="_blank" rel="noopener" class="btn btn-ghost">
+          <span class="btn-text">Visit website &nearr;</span>
         </a>
       </div>
+      <div class="hero-stats-bar fade-in">
+        <div class="stat-block">
+          <p class="stat-num">7</p>
+          <p class="stat-label">Month Program</p>
+        </div>
+        <div class="stat-block">
+          <p class="stat-num">4</p>
+          <p class="stat-label">Specialization Tracks</p>
+        </div>
+        <div class="stat-block">
+          <p class="stat-num">28</p>
+          <p class="stat-label">Weeks of Training</p>
+        </div>
+        <div class="stat-block">
+          <p class="stat-num">100%</p>
+          <p class="stat-label">Hands-On</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- THE PROBLEM WE SOLVE -->
-  <section aria-labelledby="why-title">
+  <!-- ═══════ ABOUT ═══════ -->
+  <section aria-labelledby="about-title">
     <div class="container">
-      <div class="why-grid">
-
-        <div class="wg-body">
-          <p class="section-label">Why Zharnyx</p>
-          <h2 id="why-title" class="section-title reveal-title">
-            <span class="line-wrap"><span class="inner">Education that</span></span>
-            <span class="line-wrap"><span class="inner">reflects reality.</span></span>
+      <div class="about-grid">
+        <div class="about-body">
+          <p class="section-label">About Zharnyx</p>
+          <h2 id="about-title" class="section-title reveal-title">
+            <span class="line-wrap"><span class="inner">The skill your</span></span>
+            <span class="line-wrap"><span class="inner">college didn't teach.</span></span>
           </h2>
-          <p class="wg-p fade-in">
-            Traditional cybersecurity courses produce graduates who know the theory but have never
-            faced a live adversary, navigated a real incident, or operated under pressure. The gap
-            between classroom and career is immense — and organisations pay for it every day.
+          <p class="about-p fade-in">
+            Zharnyx is a specialized cybersecurity education company built for
+            students and working professionals who want real, industry-grade
+            exposure, not textbook theory.
           </p>
-          <p class="wg-p fade-in">
-            Zharnyx was built to close that gap. Every module is grounded in attacker-grade
-            knowledge — the same methodologies used in enterprise red teams and national security
-            engagements. <span class="hl">Practitioners teaching practitioners.</span>
+          <p class="about-p fade-in">
+            Thousands of graduates walk into interviews without ever having
+            used a SIEM, run a penetration test, or investigated a real incident.
+            We close the gap between what colleges teach and what the industry
+            actually demands.
+          </p>
+          <p class="about-p fade-in">
+            <span class="hl">Your college teaches the syllabus. We teach the skill.</span>
           </p>
         </div>
 
-        <div class="wg-list fade-in">
-          <div class="wg-item">
-            <span class="wi-icon">→</span>
-            <div class="wi-text">
-              <h4>Adversarial Lab Environments</h4>
-              <p>Isolated, production-realistic environments designed for hands-on attack and defence practice — not sanitised demos.</p>
+        <div class="diff-list fade-in">
+          <div class="diff-item">
+            <span class="diff-icon">&rarr;</span>
+            <div class="diff-text">
+              <h4>Lab-First Learning</h4>
+              <p>Every week includes hands-on labs. Actual tools, actual scenarios, actual outputs.</p>
             </div>
           </div>
-          <div class="wg-item">
-            <span class="wi-icon">→</span>
-            <div class="wi-text">
-              <h4>Hybrid Practical-Theoretical Curriculum</h4>
-              <p>Theory where it provides the foundation; practice everywhere it matters. Concepts are introduced in context, not in isolation.</p>
+          <div class="diff-item">
+            <span class="diff-icon">&rarr;</span>
+            <div class="diff-text">
+              <h4>Four Deep Tracks</h4>
+              <p>SOC Analyst, VAPT, Cloud Security, and DFIR. Pick a path and go deep, not wide.</p>
             </div>
           </div>
-          <div class="wg-item">
-            <span class="wi-icon">→</span>
-            <div class="wi-text">
-              <h4>Industry-Grade Simulations</h4>
-              <p>Real-world scenarios: ransomware response, red team engagements, phishing operations, and APT emulation built from actual incident data.</p>
+          <div class="diff-item">
+            <span class="diff-icon">&rarr;</span>
+            <div class="diff-text">
+              <h4>End-to-End Structure</h4>
+              <p>Foundation &rarr; Specialization &rarr; Career Launch. Every step has a deliverable.</p>
             </div>
           </div>
-          <div class="wg-item">
-            <span class="wi-icon">→</span>
-            <div class="wi-text">
-              <h4>Workforce-Ready Outcomes</h4>
-              <p>Graduates leave with verifiable skills that map directly to enterprise and government security roles — not just a certificate.</p>
+          <div class="diff-item">
+            <span class="diff-icon">&rarr;</span>
+            <div class="diff-text">
+              <h4>Affordable by Design</h4>
+              <p>Students get discounts on Foundation. Price should never bench talent.</p>
+            </div>
+          </div>
+          <div class="diff-item">
+            <span class="diff-icon">&rarr;</span>
+            <div class="diff-text">
+              <h4>Buddy System</h4>
+              <p>Paired with a peer buddy for collaborative labs, mock interviews, and accountability.</p>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <hr class="section-rule" />
 
-  <!-- CURRICULUM TRACKS -->
-  <section aria-labelledby="curriculum-title">
+  <!-- ═══════ FOUNDERS ═══════ -->
+  <section aria-labelledby="founders-title">
     <div class="container">
-      <p class="section-label">Curriculum</p>
-      <h2 id="curriculum-title" class="section-title reveal-title">
-        <span class="line-wrap"><span class="inner">Training</span></span>
-        <span class="line-wrap"><span class="inner">tracks.</span></span>
+      <p class="section-label">Leadership</p>
+      <h2 id="founders-title" class="section-title reveal-title">
+        <span class="line-wrap"><span class="inner">Founded by</span></span>
+        <span class="line-wrap"><span class="inner">practitioners.</span></span>
       </h2>
 
-      <div class="curriculum-list">
-        <div class="cl-item fade-in">
-          <span class="cl-name">Offensive Security Fundamentals</span>
-          <span class="cl-tag">Core</span>
+      <div class="founders-row">
+        <div class="founder-card">
+          <h3 class="founder-name">Sanjai R</h3>
+          <p class="founder-role">Founder &amp; CEO</p>
+          <p class="founder-desc">Visionary behind Zharnyx. Built the academy to make real cybersecurity education accessible &#8212; grounded in practice, not theory.</p>
         </div>
-        <div class="cl-item fade-in">
-          <span class="cl-name">Web Application Penetration Testing</span>
-          <span class="cl-tag">Applied</span>
+        <div class="founder-card">
+          <h3 class="founder-name">Antony Shane</h3>
+          <p class="founder-role">Co-Founder</p>
+          <p class="founder-desc">Leads platform development and faculty operations. Builds the technical infrastructure and assembles the instructor team.</p>
         </div>
-        <div class="cl-item fade-in">
-          <span class="cl-name">Network &amp; Infrastructure Red Teaming</span>
-          <span class="cl-tag">Advanced</span>
+        <div class="founder-card">
+          <h3 class="founder-name">Harish</h3>
+          <p class="founder-role">Co-Founder</p>
+          <p class="founder-desc">Shapes curriculum architecture and technical content delivery. Every week of training reflects current industry demands.</p>
         </div>
-        <div class="cl-item fade-in">
-          <span class="cl-name">Malware Analysis &amp; Reverse Engineering</span>
-          <span class="cl-tag">Specialist</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ PULL QUOTE ═══════ -->
+  <section class="pull-quote" aria-hidden="true">
+    <div class="container">
+      <p class="pull-quote-text fade-in">
+        The syllabus gets you a degree.<br />
+        <em>The skill gets you the job.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════ PROGRAM TIMELINE ═══════ -->
+  <section aria-labelledby="program-title">
+    <div class="container">
+      <p class="section-label">Program</p>
+      <h2 id="program-title" class="section-title reveal-title">
+        <span class="line-wrap"><span class="inner">7 months to</span></span>
+        <span class="line-wrap"><span class="inner">deployment-ready.</span></span>
+      </h2>
+      <p class="program-intro fade-in">
+        A modular program that takes a complete beginner to an industry-ready
+        cybersecurity professional. Available as standalone modules or as a
+        complete career track.
+      </p>
+
+      <div class="timeline">
+        <div class="tl-phase">
+          <div class="tl-dot"></div>
+          <p class="tl-duration">Phase 1 &middot; Months 1&ndash;3</p>
+          <h3 class="tl-title">Foundation</h3>
+          <p class="tl-desc">
+            Mandatory for all students. Builds the technical base every
+            cybersecurity professional needs: OS internals, networking,
+            traffic analysis, security frameworks, and Python scripting.
+          </p>
+          <ul class="tl-checks">
+            <li>Windows &amp; Linux system administration from scratch</li>
+            <li>Build and manage your own virtual cybersecurity lab</li>
+            <li>Analyze real network traffic with Wireshark</li>
+            <li>OWASP Top 10, NIST, and ISO 27001 frameworks</li>
+            <li>Python automation scripts for security tasks</li>
+            <li>48-hour Foundation Security Audit Capstone</li>
+          </ul>
         </div>
-        <div class="cl-item fade-in">
-          <span class="cl-name">Digital Forensics &amp; Incident Response</span>
-          <span class="cl-tag">Applied</span>
+
+        <div class="tl-phase">
+          <div class="tl-dot"></div>
+          <p class="tl-duration">Phase 2 &middot; Months 4&ndash;6</p>
+          <h3 class="tl-title">Specialization</h3>
+          <p class="tl-desc">
+            Select one of four tracks. Three months of advanced, job-specific
+            training in the chosen domain.
+          </p>
         </div>
-        <div class="cl-item fade-in">
-          <span class="cl-name">AI-Augmented Attack &amp; Defence</span>
-          <span class="cl-tag">Emerging</span>
+
+        <div class="tl-phase">
+          <div class="tl-dot"></div>
+          <p class="tl-duration">Phase 3 &middot; Month 7</p>
+          <h3 class="tl-title">Career Launch</h3>
+          <p class="tl-desc">
+            Not coursework. Career deployment.
+          </p>
+          <ul class="tl-checks">
+            <li>72-hour live capstone across all four tracks simultaneously</li>
+            <li>Portfolio finalization: GitHub, reports, dashboards</li>
+            <li>ATS resume optimization and LinkedIn transformation</li>
+            <li>Mock interviews: HR screen, technical panel, whiteboard, stress-test</li>
+            <li>Partner Company Demo Day with hiring managers</li>
+            <li>Alumni network for ongoing referrals and certification support</li>
+          </ul>
         </div>
-        <div class="cl-item fade-in">
-          <span class="cl-name">CTF Preparation &amp; Competition Training</span>
-          <span class="cl-tag">Applied</span>
-        </div>
-        <div class="cl-item fade-in">
-          <span class="cl-name">Security Operations Centre (SOC) Analyst</span>
-          <span class="cl-tag">Core</span>
+      </div>
+
+      <!-- Tracks -->
+      <div class="tracks-wrap">
+        <p class="section-label">Specialization Tracks</p>
+        <div class="tracks-grid">
+          <div class="track-card">
+            <span class="track-num">01</span>
+            <p class="track-tag">SOC Analyst &middot; 12 Weeks</p>
+            <h3 class="track-name">Security Operations</h3>
+            <p class="track-desc">
+              Detect, triage, and respond to threats using enterprise SIEM tools
+              and threat intelligence. Splunk, Microsoft Sentinel, MITRE ATT&amp;CK,
+              Zeek, Suricata, and NIST 800-61 incident response.
+            </p>
+            <p class="track-deliverable"><strong>Deliverables:</strong> SOC Dashboard, Alert Triage Lab, IR Report, Threat Hunt Report</p>
+          </div>
+          <div class="track-card">
+            <span class="track-num">02</span>
+            <p class="track-tag">VAPT &middot; 12 Weeks</p>
+            <h3 class="track-name">Penetration Testing</h3>
+            <p class="track-desc">
+              Offensive security and ethical hacking. OSINT with Maltego, Nmap,
+              Nessus, Metasploit, Burp Suite Pro, Active Directory attacks with
+              BloodHound and Mimikatz.
+            </p>
+            <p class="track-deliverable"><strong>Deliverables:</strong> OSINT Profile, Web App Pentest Report, 15-Page VAPT Report</p>
+          </div>
+          <div class="track-card">
+            <span class="track-num">03</span>
+            <p class="track-tag">Cloud Security &middot; 12 Weeks</p>
+            <h3 class="track-name">Cloud Infrastructure</h3>
+            <p class="track-desc">
+              Secure cloud infrastructure on AWS and Azure. IAM policies, Zero
+              Trust design, container/Kubernetes hardening, GuardDuty, Checkov,
+              Prowler compliance auditing.
+            </p>
+            <p class="track-deliverable"><strong>Deliverables:</strong> IAM Remediations, Hardened Container Lab, Compliance Audit Report</p>
+          </div>
+          <div class="track-card">
+            <span class="track-num">04</span>
+            <p class="track-tag">DFIR &middot; 12 Weeks</p>
+            <h3 class="track-name">Digital Forensics</h3>
+            <p class="track-desc">
+              Forensic investigation and incident response. Chain of custody, FTK
+              Imager, NTFS forensics, Volatility 3 memory analysis, PEStudio
+              malware analysis, and full breach investigation.
+            </p>
+            <p class="track-deliverable"><strong>Deliverables:</strong> Forensic Image, Attack Timeline, 20-Page Breach Investigation Report</p>
+          </div>
         </div>
       </div>
     </div>
@@ -413,59 +794,63 @@
 
   <hr class="section-rule" />
 
-  <!-- PLATFORM PILLARS -->
-  <section aria-labelledby="pillars-title">
+  <!-- ═══════ FAQ — 2-col ═══════ -->
+  <section aria-labelledby="faq-title">
     <div class="container">
-      <p class="section-label">Platform pillars</p>
-      <h2 id="pillars-title" class="section-title reveal-title">
-        <span class="line-wrap"><span class="inner">How it</span></span>
-        <span class="line-wrap"><span class="inner">works.</span></span>
+      <p class="section-label">FAQ</p>
+      <h2 id="faq-title" class="section-title reveal-title">
+        <span class="line-wrap"><span class="inner">Common</span></span>
+        <span class="line-wrap"><span class="inner">questions.</span></span>
       </h2>
 
-      <div class="pillars-grid">
-        <div class="pillar-card fade-in">
-          <p class="pc-num">01</p>
-          <h3 class="pc-title">Lab-First Architecture</h3>
-          <p class="pc-desc">Every concept is introduced in a live lab context before any lecture. Students encounter the problem, engage with it hands-on, then receive the theoretical framework — the reverse of traditional instruction.</p>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3 class="faq-q">Who can enroll?</h3>
+          <p class="faq-a">Any college student, recent graduate, or IT professional. No prior cybersecurity experience required.</p>
         </div>
-        <div class="pillar-card fade-in">
-          <p class="pc-num">02</p>
-          <h3 class="pc-title">Scenario-Based Assessment</h3>
-          <p class="pc-desc">Assessment is mission-driven. Learners complete timed, scoped security engagements — not multiple choice tests. Skills are verified by doing, with automated and expert review pipelines.</p>
+        <div class="faq-item">
+          <h3 class="faq-q">Is it live or recorded?</h3>
+          <p class="faq-a">Training is live and interactive. Every session involves instructor delivery, Q&amp;A, and real-time lab work.</p>
         </div>
-        <div class="pillar-card fade-in">
-          <p class="pc-num">03</p>
-          <h3 class="pc-title">Practitioner Instruction</h3>
-          <p class="pc-desc">Content is built and delivered by active practitioners — red teamers, malware researchers, and incident responders with current field experience. No recycled academic slides.</p>
+        <div class="faq-item">
+          <h3 class="faq-q">Can I take only Foundation?</h3>
+          <p class="faq-a">Yes. All phases are available as standalone modules. No need to commit to the full 7-month track.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Do you guarantee placement?</h3>
+          <p class="faq-a">We provide structured placement support: resume building, mock interviews, demo days, and direct company referrals.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Do I need a laptop?</h3>
+          <p class="faq-a">Yes. At least 8GB RAM and 100GB free disk space for virtual lab environments. Setup guidance provided from Day 1.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">How do I enroll?</h3>
+          <p class="faq-a">Contact the Zharnyx team directly. Enrollment slots are limited per cohort to ensure quality mentorship.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <hr class="section-rule" />
-
-  <!-- CTA -->
-  <section aria-label="Contact Zharnyx">
+  <!-- ═══════ CTA ═══════ -->
+  <section class="cta-section" aria-label="Contact Zharnyx">
     <div class="container">
-      <div class="contact-inner">
-        <p class="section-label">Connect</p>
-        <h2 class="contact-headline reveal-title">
-          <span class="line-wrap"><span class="inner">Join the</span></span>
-          <span class="line-wrap accent-line"><span class="inner"><em>next cohort.</em></span></span>
+      <div class="cta-inner">
+        <h2 class="cta-headline reveal-title">
+          <span class="line-wrap"><span class="inner">Build the career</span></span>
+          <span class="line-wrap accent-line"><span class="inner"><em>your degree couldn't.</em></span></span>
         </h2>
-        <p class="contact-sub fade-in">
-          Early-access cohort enrolments, institutional partnerships, and curriculum
-          collaboration enquiries are open. Reach out to discuss how Zharnyx can
-          build your organisation's or institution's security talent pipeline.
+        <p class="cta-sub fade-in">
+          Real labs. Real tools. Real outcomes.
         </p>
-        <div class="hero-cta-row fade-in">
+        <div class="cta-btns fade-in">
           <a href="mailto:antonyshane@rapturetwelve.com" class="btn btn-primary">
             <span class="btn-text">Get in touch</span>
-            <span class="btn-icon" aria-hidden="true">↗</span>
+            <span class="btn-icon" aria-hidden="true">&nearr;</span>
             <span class="btn-fill" aria-hidden="true"></span>
           </a>
-          <a href="../rapture-twelve/index.html" class="btn btn-ghost">
-            <span class="btn-text">Rapture Twelve →</span>
+          <a href="https://www.zharnyx.com" target="_blank" rel="noopener" class="btn btn-ghost">
+            <span class="btn-text">Visit Zharnyx &rarr;</span>
           </a>
         </div>
       </div>
@@ -473,8 +858,8 @@
   </section>
 
   <footer role="contentinfo">
-    <span>© 2026 Zharnyx Pvt Ltd</span>
-    <span>Coimbatore, India</span>
+    <span>&copy; 2026 Zharnyx Private Limited</span>
+    <span>India</span>
   </footer>
 
   <script src="../js/pages.js" defer></script>

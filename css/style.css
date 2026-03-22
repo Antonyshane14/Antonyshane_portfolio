@@ -133,8 +133,7 @@ section { padding: 7rem 0; }
 
 /* ──────────────────────────────────────────────────────────
    ANIMATION BASE STATES
-   (GSAP / IntersectionObserver targets stay invisible
-    until JS animates them in)
+   (GSAP targets start invisible — animated in on scroll)
 ────────────────────────────────────────────────────────── */
 .line-wrap {
   display: block;
@@ -151,6 +150,53 @@ section { padding: 7rem 0; }
   opacity: 0;
   transform: translateY(28px);
   will-change: opacity, transform;
+}
+
+/* Extra animation base states used by pages.js */
+.diff-item,
+.founder-card,
+.faq-item,
+.track-card,
+.tl-phase,
+.phase-row,
+.pull-quote-text,
+.tl-dot {
+  will-change: opacity, transform;
+}
+
+/* Section rule — starts collapsed, JS expands */
+.section-rule {
+  transform-origin: left center;
+  will-change: transform;
+}
+
+/* ──────────────────────────────────────────────────────────
+   GLOBAL INTERACTION POLISH
+   Richer hover/focus states for sub-pages
+────────────────────────────────────────────────────────── */
+
+/* Smooth cursor on all clickable elements */
+a, button, [role="button"] { cursor: pointer; }
+
+/* Links get a subtle underline draw on hover */
+.founder-desc a,
+.faq-a a,
+.about-p a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color var(--t-mid);
+}
+.founder-desc a:hover,
+.faq-a a:hover,
+.about-p a:hover {
+  text-decoration-color: var(--accent);
+}
+
+/* Page-level smooth opacity transition (set by JS on load) */
+body {
+  transition: opacity 0.55s ease;
 }
 
 /* ──────────────────────────────────────────────────────────
