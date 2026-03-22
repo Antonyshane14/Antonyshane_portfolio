@@ -85,7 +85,7 @@
       margin-bottom: 1.75rem;
     }
     .page-hero-sub {
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       color: var(--text-dim);
       max-width: 540px;
       line-height: 1.9;
@@ -105,26 +105,41 @@
     .breadcrumb a:hover { opacity: 0.75; }
     .breadcrumb span { opacity: 0.4; }
 
-    /* Hero stats */
-    .hero-stats-bar {
+    .page-hero { overflow: visible; }
+    .page-hero .scroll-hint { bottom: -4.5rem; }
+
+    /* Hero stat pills */
+    .hero-pills {
       display: flex;
-      gap: 3.5rem;
-      padding-top: 2.5rem;
-      margin-top: 0.5rem;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
       border-top: 1px solid var(--border);
     }
-    .stat-num {
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.6rem 1.15rem;
+      border: 1px solid rgba(200,169,110,0.18);
+      background: rgba(200,169,110,0.04);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #b5b0a8;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .hero-pill:hover {
+      border-color: rgba(200,169,110,0.35);
+      background: rgba(200,169,110,0.08);
+    }
+    .hero-pill strong {
       font-family: var(--fd);
-      font-size: 1.75rem;
+      font-size: 1.05rem;
+      font-weight: 400;
       color: var(--accent);
       line-height: 1;
-      margin-bottom: 0.35rem;
-    }
-    .stat-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
     }
 
     /* ════════════════ ABOUT — asymmetric 2-col ════════════════ */
@@ -534,9 +549,9 @@
         <span class="line-wrap accent-line"><span class="inner"><em>Private Limited.</em></span></span>
       </h1>
       <p class="page-hero-sub">
-        India's first track-specialized, deployment-ready cybersecurity
-        academy. 7-month programs that turn beginners into job-ready
-        security professionals. Labs, not lectures.
+        A cybersecurity academy built around hands on training,
+        not theory. 7 month programs designed to turn beginners
+        into professionals that are ready from day one.
       </p>
       <div class="hero-cta-row">
         <a href="mailto:antonyshane@rapturetwelve.com" class="btn btn-primary">
@@ -548,24 +563,16 @@
           <span class="btn-text">Visit website &nearr;</span>
         </a>
       </div>
-      <div class="hero-stats-bar fade-in">
-        <div class="stat-block">
-          <p class="stat-num">7</p>
-          <p class="stat-label">Month Program</p>
-        </div>
-        <div class="stat-block">
-          <p class="stat-num">4</p>
-          <p class="stat-label">Specialization Tracks</p>
-        </div>
-        <div class="stat-block">
-          <p class="stat-num">28</p>
-          <p class="stat-label">Weeks of Training</p>
-        </div>
-        <div class="stat-block">
-          <p class="stat-num">100%</p>
-          <p class="stat-label">Hands-On</p>
-        </div>
+      <div class="hero-pills fade-in">
+        <span class="hero-pill"><strong>7</strong> Month Program</span>
+        <span class="hero-pill"><strong>4</strong> Tracks</span>
+        <span class="hero-pill"><strong>28</strong> Weeks</span>
+        <span class="hero-pill"><strong>100%</strong> Hands-On</span>
       </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
