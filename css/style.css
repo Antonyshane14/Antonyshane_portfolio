@@ -73,6 +73,7 @@ html {
   font-size: 16px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
 }
@@ -1929,6 +1930,20 @@ footer[role="contentinfo"] span {
     gap: 2.5rem;
   }
 
+  /* Experience cards — stack to 1 column */
+  .exp-cards-grid { grid-template-columns: 1fr; }
+  .exp-card { padding: 1.4rem 1.25rem; }
+
+  /* Achievements layout — stack photo above items */
+  .ach-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .ach-photo-area { grid-column: 1; grid-row: auto; }
+  .ach-layout > .ach-col { grid-column: 1; grid-row: auto; }
+  .ach-certs-row { grid-column: 1; grid-row: auto; }
+  .ach-certs-grid { grid-template-columns: 1fr; gap: 0; }
+
   .domains-strip { flex-direction: column; }
   .d-item { border-right: none; border-bottom: 1px solid var(--border); }
   .d-item:last-child { border-bottom: none; }
@@ -1954,6 +1969,9 @@ footer[role="contentinfo"] span {
 
   /* Section rules */
   .section-rule { margin: 0 1.5rem; }
+
+  /* About text — no justify on mobile */
+  .about-p { text-align: left; }
 
   /* Timeline mobile styles */
   .timeline::before {
