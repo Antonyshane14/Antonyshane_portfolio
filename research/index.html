@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../favicon.png" />
   <title>Research - Antony Shane, Adversarial AI, Malware Engineering, Vulnerability Research</title>
-  <meta name="description" content="Antony Shane's cybersecurity research: adversarial ML, adaptive malware evolution, AI-driven penetration testing, and vulnerability research under India's National Security Council Secretariat (NSCS) at NIT Rourkela." />
+  <meta name="description" content="Antony Shane's cybersecurity research: adversarial ML, adaptive malware evolution, and vulnerability research under India's National Security Council Secretariat (NSCS) at NIT Rourkela." />
   <meta name="keywords" content="Antony Shane research, adversarial machine learning, malware research India, NIT Rourkela cybersecurity, NSCS vulnerability research, AI penetration testing, EDR evasion research, SCI IEEE cybersecurity" />
   <meta name="author" content="Antony Shane" />
   <link rel="canonical" href="https://www.antonyshane.com/research/" />
@@ -20,7 +20,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary" />
   <meta name="twitter:title"       content="Research | Antony Shane" />
-  <meta name="twitter:description" content="Adversarial ML · Adaptive Malware · AI-Driven Pentesting · NSCS India · NIT Rourkela" />
+  <meta name="twitter:description" content="Adversarial ML · Adaptive Malware · Vulnerability Research · NSCS India · NIT Rourkela" />
 
   <!-- JSON-LD: BreadcrumbList + Person + Research projects -->
   <script type="application/ld+json">
@@ -46,7 +46,6 @@
       "knowsAbout": [
         "Adversarial Machine Learning",
         "Malware Research",
-        "AI-driven Penetration Testing",
         "Vulnerability Research",
         "EDR/XDR Evasion",
         "Offensive Security"
@@ -58,17 +57,8 @@
       "name": "Adaptive Malware Evolution Framework for EDR/XDR Resilience Evaluation",
       "author": { "@type": "Person", "name": "Antony Shane" },
       "dateCreated": "2026",
-      "description": "A real-time adaptive malware research framework enabling dynamic code mutation and behavioral transformation based on EDR telemetry feedback, leveraging Memetic Algorithms and LLM-guided strategy selection. Targets SCI-indexed journals and IEEE security conferences.",
-      "keywords": "adaptive malware, EDR evasion, memetic algorithms, LLM security, adversarial ML"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Autonomous AI-Driven Penetration Testing Framework",
-      "author": { "@type": "Person", "name": "Antony Shane" },
-      "dateCreated": "2025",
-      "description": "An automated penetration testing framework orchestrating full attack lifecycle from reconnaissance to exploitation, using LLM agents with feedback-driven execution loops.",
-      "applicationCategory": "SecurityApplication"
+      "description": "An adaptive malware framework combining memetic algorithms for behavioral strategy search and GNN-based CFG mutation for structural variation, demonstrating autonomous discovery of blind spots in ML-based behavioral detection through closed-loop optimization. Targets SCI-indexed journals and IEEE security conferences.",
+      "keywords": "adaptive malware, EDR evasion, memetic algorithms, GNN, CFG mutation, adversarial ML, closed-loop optimization"
     }
   ]
   </script>
@@ -427,54 +417,43 @@
       <p class="section-label">Active Research</p>
       <h2 id="research-title" class="section-title reveal-title">
         <span class="line-wrap"><span class="inner">Current</span></span>
-        <span class="line-wrap"><span class="inner">work.</span></span>
+        <span class="line-wrap"><span class="inner" style="color:var(--accent)">work.</span></span>
       </h2>
 
       <div class="research-grid">
 
-        <!-- R1 — Featured -->
+        <!-- R1 — Featured: Adaptive Malware -->
         <article class="research-card featured fade-in">
           <p class="rc-status">In Progress · 2026</p>
           <h3 class="rc-title">Adaptive Malware Evolution Framework for EDR/XDR Resilience Evaluation</h3>
           <p class="rc-desc">
-            A real-time adaptive malware research framework capable of dynamic code mutation and
-            behavioral transformation based on environmental telemetry and EDR feedback. Leverages
-            machine learning techniques and evolutionary optimization algorithms — specifically
-            Memetic Algorithms — augmented with LLM-guided strategy selection. Designed to
-            systematically evaluate and stress-test EDR/XDR detection pipelines.
+            An adaptive malware framework where a persistent implant on an EDR-protected host
+            exfiltrates telemetry to a C2 server, which replicates the target environment in VMs
+            running the same EDR to serve as a black-box optimization oracle. A hybrid approach
+            combining memetic algorithms for behavioral strategy search and GNN-based CFG mutation
+            for structural variation evolves command execution sequences that evade detection,
+            converging within the window between EDR content updates. The core contribution is
+            demonstrating that malware can autonomously discover and exploit blind spots in
+            ML-based behavioral detection through closed-loop optimization — formally defining
+            the behavioral mutation space, characterizing the sim-to-real transfer gap between
+            lab VMs and live targets, measuring re-evolution cost after EDR updates, and evaluating
+            cross-vendor transferability to determine whether evasion variants exploit fundamental
+            weaknesses in behavioral ML or product-specific gaps.
           </p>
           <div class="rc-tags">
             <span>Python</span>
             <span>Adversarial ML</span>
             <span>Memetic Algorithms</span>
-            <span>LLM Agents</span>
+            <span>GNN / CFG Mutation</span>
             <span>EDR/XDR</span>
             <span>Behavioral Analysis</span>
+            <span>Closed-Loop Optimization</span>
           </div>
           <p class="rc-target">↳ Targeting SCI-indexed journals &amp; IEEE S&amp;P / USENIX Security</p>
         </article>
 
-        <!-- R2 -->
-        <article class="research-card fade-in">
-          <p class="rc-status done">Completed · 2025</p>
-          <h3 class="rc-title">Autonomous AI-Driven Penetration Testing Framework</h3>
-          <p class="rc-desc">
-            Automated framework orchestrating the full attack lifecycle — asset discovery,
-            reconnaissance, vulnerability assessment, exploit generation, and active exploitation.
-            LLM agents with feedback-driven execution loops continuously analyze attack feedback
-            (status codes, timing anomalies, error patterns) to iteratively refine strategies
-            across multiple vulnerability classes.
-          </p>
-          <div class="rc-tags">
-            <span>Python</span>
-            <span>LLM Agents</span>
-            <span>AI Workflow</span>
-            <span>VAPT Automation</span>
-          </div>
-        </article>
-
-        <!-- R3 -->
-        <article class="research-card fade-in">
+        <!-- R2 — NSCS -->
+        <article class="research-card featured fade-in">
           <p class="rc-status done">Ongoing · 2024–Present</p>
           <h3 class="rc-title">Open-Source Vulnerability Research (NSCS Program)</h3>
           <p class="rc-desc">
@@ -555,9 +534,9 @@
           <span class="line-wrap accent-line"><span class="inner"><em>partnerships welcome.</em></span></span>
         </h2>
         <p class="contact-sub fade-in">
-          Open to academic collaborations, joint research proposals, and security research
-          engagements. Particularly interested in adversarial ML, autonomous offensive tooling,
-          and vulnerability analytics.
+          Open to research collaborations in offensive security and artificial intelligence —
+          particularly adaptive malware analysis, adversarial ML against detection systems,
+          and vulnerability research in open-source ecosystems.
         </p>
         <div class="hero-cta-row fade-in">
           <a href="mailto:antonyshane@rapturetwelve.com" class="btn btn-primary">
