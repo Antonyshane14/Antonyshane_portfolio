@@ -49,13 +49,14 @@ function init() {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Particle system
+    // Particle system — reduced intensity on mobile
+    const isMobile = window.innerWidth <= 768;
     const particles = [];
-    const particleCount = 380;
+    const particleCount = isMobile ? 120 : 380;
     const accentColor = '#c8a96e';
     let mouseX = null;
     let mouseY = null;
-    const interactionRadius = 120;
+    const interactionRadius = isMobile ? 0 : 120;
 
     class Particle {
       constructor() {
@@ -149,7 +150,7 @@ function init() {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const distance = Math.hypot(dx, dy);
-          const maxDistance = 135;
+          const maxDistance = isMobile ? 100 : 135;
 
           if (distance < maxDistance) {
             const alpha = (1 - distance / maxDistance) * 0.3;
