@@ -402,7 +402,7 @@
       text-align: justify;
     }
 
-    /* ── ENGAGEMENTS (card grid, expandable) ── */
+    /* ── ENGAGEMENTS (card grid, popup expand) ── */
     .r12-projects { background: transparent; }
     .r12-eng-grid {
       display: grid;
@@ -410,6 +410,8 @@
       gap: 1.4rem;
       margin-top: 2rem;
     }
+
+    /* card — fixed size, no layout shift on expand */
     .r12-eng-card {
       background: rgba(12,12,12,0.75);
       border: 1px solid rgba(200,169,110,0.12);
@@ -419,23 +421,27 @@
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    }
-    .r12-eng-summary {
-      flex: 1;
+      transition: border-color 0.28s ease, box-shadow 0.28s ease,
+                  background 0.28s ease, transform 0.28s cubic-bezier(0.16,1,0.3,1);
+      z-index: 1;
     }
     .r12-eng-card:hover {
-      border-color: rgba(200,169,110,0.35);
-      background: rgba(18,14,8,0.9);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.45), 0 0 20px rgba(200,169,110,0.06);
+      border-color: rgba(200,169,110,0.32);
+      background: rgba(18,14,8,0.88);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 16px rgba(200,169,110,0.05);
     }
     .r12-eng-card.r12-expanded {
-      border-color: rgba(200,169,110,0.4);
-      background: rgba(18,14,8,0.92);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 28px rgba(200,169,110,0.08);
+      border-color: rgba(200,169,110,0.5);
+      background: rgba(14,10,4,0.96);
+      transform: scale(1.03);
+      z-index: 30;
+      box-shadow:
+        0 0 0 1px rgba(200,169,110,0.3),
+        0 20px 50px rgba(0,0,0,0.65),
+        0 0 40px rgba(200,169,110,0.1);
     }
 
-    /* ── summary (always visible) ── */
+    /* ── summary (always visible, fills card height) ── */
     .r12-eng-summary {
       padding: 1.3rem 1.4rem;
       display: flex;
@@ -449,12 +455,13 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(115deg, transparent 30%, rgba(200,169,110,0.05) 50%, transparent 70%);
+      background: linear-gradient(115deg, transparent 30%, rgba(200,169,110,0.06) 50%, transparent 70%);
       transform: translateX(-100%);
-      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
       pointer-events: none;
     }
-    .r12-eng-card:hover .r12-eng-summary::after { transform: translateX(100%); }
+    .r12-eng-card:hover .r12-eng-summary::after,
+    .r12-eng-card.r12-expanded .r12-eng-summary::after { transform: translateX(100%); }
 
     .r12-eng-header {
       display: flex;
@@ -480,7 +487,7 @@
       border-radius: 50%;
       position: relative;
       flex-shrink: 0;
-      transition: border-color 0.25s, background 0.25s, transform 0.35s ease;
+      transition: border-color 0.25s, background 0.25s;
     }
     .r12-eng-toggle::before,
     .r12-eng-toggle::after {
@@ -489,22 +496,17 @@
       top: 50%; left: 50%;
       background: var(--r12-gold);
       border-radius: 1px;
-      transition: transform 0.25s ease;
+      transition: transform 0.25s ease, opacity 0.25s ease;
     }
-    .r12-eng-toggle::before {
-      width: 9px; height: 1.5px;
-      transform: translate(-50%, -50%);
-    }
-    .r12-eng-toggle::after {
-      width: 1.5px; height: 9px;
-      transform: translate(-50%, -50%);
-    }
+    .r12-eng-toggle::before { width: 9px; height: 1.5px; transform: translate(-50%,-50%); }
+    .r12-eng-toggle::after  { width: 1.5px; height: 9px;  transform: translate(-50%,-50%); }
     .r12-eng-card.r12-expanded .r12-eng-toggle {
-      border-color: rgba(200,169,110,0.55);
-      background: rgba(200,169,110,0.1);
+      border-color: rgba(200,169,110,0.6);
+      background: rgba(200,169,110,0.12);
     }
     .r12-eng-card.r12-expanded .r12-eng-toggle::after {
-      transform: translate(-50%, -50%) scaleY(0);
+      opacity: 0;
+      transform: translate(-50%,-50%) rotate(90deg);
     }
 
     .r12-eng-title {
@@ -520,6 +522,7 @@
       justify-content: space-between;
       gap: 0.5rem;
       flex-wrap: wrap;
+      margin-top: auto;
     }
     .r12-eng-client {
       font-size: 0.7rem;
@@ -534,28 +537,39 @@
       white-space: nowrap;
     }
 
-    /* ── expanded details ── */
+    /* ── floating popup panel (absolutely positioned, overlaps siblings) ── */
     .r12-eng-details {
-      max-height: 0;
-      overflow: hidden;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: -1px;
+      right: -1px;
+      background: rgba(10,7,2,0.97);
+      border: 1px solid rgba(200,169,110,0.38);
+      border-top: 2px solid var(--r12-gold);
+      border-radius: 2px;
+      z-index: 40;
+      pointer-events: none;
       opacity: 0;
-      transition: max-height 0.42s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      transform: scaleY(0.85) translateY(-8px);
+      transform-origin: top center;
+      transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.16,1,0.3,1);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.7), 0 0 30px rgba(200,169,110,0.08);
     }
     .r12-eng-card.r12-expanded .r12-eng-details {
-      max-height: 600px;
       opacity: 1;
+      transform: scaleY(1) translateY(0);
+      pointer-events: auto;
     }
     .r12-eng-details-inner {
-      padding: 1rem 1.4rem 1.4rem;
+      padding: 1.1rem 1.4rem 1.3rem;
       display: flex;
       flex-direction: column;
       gap: 0.8rem;
-      border-top: 1px solid rgba(200,169,110,0.1);
     }
     .r12-eng-desc {
       font-size: 0.76rem;
-      color: rgba(240,237,232,0.58);
-      line-height: 1.7;
+      color: rgba(240,237,232,0.6);
+      line-height: 1.72;
     }
     .r12-eng-impact-label {
       display: block;
@@ -569,8 +583,8 @@
     }
     .r12-eng-impact-text {
       font-size: 0.73rem;
-      color: rgba(240,237,232,0.45);
-      line-height: 1.6;
+      color: rgba(240,237,232,0.48);
+      line-height: 1.62;
     }
 
     /* ── PRODUCTS ── */
@@ -1441,7 +1455,6 @@
             <span class="r12-product-tag">Fully Autonomous</span>
             <span class="r12-product-tag">Adaptive Attack</span>
             <span class="r12-product-tag">AI Exploit Intel</span>
-            <span class="r12-product-tag">CTF/HTB Proven</span>
           </div>
         </div>
         <div class="r12-product-card">
@@ -1452,7 +1465,6 @@
             <span class="r12-product-tag">3-Tier ML Arch</span>
             <span class="r12-product-tag">Resource Efficient</span>
             <span class="r12-product-tag">CTI Trained</span>
-            <span class="r12-product-tag">Cross-Verification</span>
           </div>
         </div>
       </div>
@@ -1558,12 +1570,20 @@
   </footer>
 
   <script>
-    document.querySelectorAll('.r12-eng-card').forEach(card => {
-      card.addEventListener('click', () => {
+    const engCards = document.querySelectorAll('.r12-eng-card');
+
+    engCards.forEach(card => {
+      card.addEventListener('click', e => {
+        e.stopPropagation();
         const isOpen = card.classList.contains('r12-expanded');
-        document.querySelectorAll('.r12-eng-card.r12-expanded').forEach(c => c.classList.remove('r12-expanded'));
+        engCards.forEach(c => c.classList.remove('r12-expanded'));
         if (!isOpen) card.classList.add('r12-expanded');
       });
+    });
+
+    // close popup when clicking anywhere outside
+    document.addEventListener('click', () => {
+      engCards.forEach(c => c.classList.remove('r12-expanded'));
     });
   </script>
   <script src="../js/pages.js" defer></script>
