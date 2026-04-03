@@ -514,12 +514,12 @@ function initPage() {
      RAPTURE TWELVE — PROJECT ROWS
      slide in from left with stagger
   ══════════════════════════════════════ */
-  $$('.r12-pt-row').forEach((row, i) => {
-    gsap.fromTo(row,
-      { opacity: 0, x: -35, borderLeftColor: 'rgba(200,169,110,0)' },
+  $$('.r12-eng-card').forEach((card, i) => {
+    gsap.fromTo(card,
+      { opacity: 0, y: 30, scale: 0.97 },
       {
-        opacity: 1, x: 0, duration: 0.7, ease: 'power3.out', delay: i * 0.1,
-        scrollTrigger: { trigger: row, start: 'top 88%', toggleActions: 'play none none none' }
+        opacity: 1, y: 0, scale: 1, duration: 0.65, ease: 'power3.out', delay: (i % 3) * 0.1,
+        scrollTrigger: { trigger: card, start: 'top 88%', toggleActions: 'play none none none' }
       }
     );
   });

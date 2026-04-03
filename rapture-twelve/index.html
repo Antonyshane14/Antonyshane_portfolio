@@ -402,34 +402,175 @@
       text-align: justify;
     }
 
-    /* ── PROJECTS ── */
+    /* ── ENGAGEMENTS (card grid, expandable) ── */
     .r12-projects { background: transparent; }
-    .r12-projects-table { margin-top: 2rem; border-top: 1px solid rgba(200,169,110,0.2); }
-    .r12-pt-row {
+    .r12-eng-grid {
       display: grid;
-      grid-template-columns: 140px 1fr 1fr 110px;
-      gap: 2rem;
-      align-items: start;
-      padding: 1.75rem 0;
-      border-bottom: 1px solid rgba(200,169,110,0.1);
-      transition: background 0.2s;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+      margin-top: 2rem;
     }
-    .r12-pt-row:hover { background: rgba(200,169,110,0.03); padding-left: 0.5rem; }
-    .r12-pt-type {
+    .r12-eng-card {
+      background: rgba(12,12,12,0.75);
+      border: 1px solid rgba(200,169,110,0.12);
+      border-top: 2px solid var(--r12-gold);
+      border-radius: 2px;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+    .r12-eng-summary {
+      flex: 1;
+    }
+    .r12-eng-card:hover {
+      border-color: rgba(200,169,110,0.35);
+      background: rgba(18,14,8,0.9);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.45), 0 0 20px rgba(200,169,110,0.06);
+    }
+    .r12-eng-card.r12-expanded {
+      border-color: rgba(200,169,110,0.4);
+      background: rgba(18,14,8,0.92);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 28px rgba(200,169,110,0.08);
+    }
+
+    /* ── summary (always visible) ── */
+    .r12-eng-summary {
+      padding: 1.3rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      position: relative;
+      overflow: hidden;
+      flex: 1;
+    }
+    .r12-eng-summary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 30%, rgba(200,169,110,0.05) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .r12-eng-card:hover .r12-eng-summary::after { transform: translateX(100%); }
+
+    .r12-eng-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .r12-eng-type {
       font-family: var(--r12-font);
-      font-size: 0.55rem;
-      letter-spacing: 0.15em;
+      font-size: 0.56rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--r12-gold);
-      padding-top: 0.1rem;
+      background: rgba(200,169,110,0.08);
+      border: 1px solid rgba(200,169,110,0.22);
+      padding: 0.28rem 0.65rem;
+      border-radius: 2px;
+      white-space: nowrap;
     }
-    .r12-pt-work { font-size: 0.82rem; color: var(--r12-white); line-height: 1.6; }
-    .r12-pt-impact { font-size: 0.78rem; color: rgba(240,237,232,0.55); line-height: 1.6; }
-    .r12-pt-outcome {
+    .r12-eng-toggle {
+      width: 22px; height: 22px;
+      border: 1px solid rgba(200,169,110,0.3);
+      border-radius: 50%;
+      position: relative;
+      flex-shrink: 0;
+      transition: border-color 0.25s, background 0.25s, transform 0.35s ease;
+    }
+    .r12-eng-toggle::before,
+    .r12-eng-toggle::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      background: var(--r12-gold);
+      border-radius: 1px;
+      transition: transform 0.25s ease;
+    }
+    .r12-eng-toggle::before {
+      width: 9px; height: 1.5px;
+      transform: translate(-50%, -50%);
+    }
+    .r12-eng-toggle::after {
+      width: 1.5px; height: 9px;
+      transform: translate(-50%, -50%);
+    }
+    .r12-eng-card.r12-expanded .r12-eng-toggle {
+      border-color: rgba(200,169,110,0.55);
+      background: rgba(200,169,110,0.1);
+    }
+    .r12-eng-card.r12-expanded .r12-eng-toggle::after {
+      transform: translate(-50%, -50%) scaleY(0);
+    }
+
+    .r12-eng-title {
       font-family: var(--r12-font);
-      font-size: 0.9rem;
+      font-size: clamp(0.68rem, 0.9vw, 0.78rem);
+      font-weight: 700;
       color: var(--r12-white);
-      text-align: right;
+      line-height: 1.45;
+    }
+    .r12-eng-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .r12-eng-client {
+      font-size: 0.7rem;
+      color: var(--r12-gold);
+      opacity: 0.72;
+    }
+    .r12-eng-metric {
+      font-family: var(--r12-font);
+      font-size: 0.52rem;
+      color: rgba(240,237,232,0.4);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    /* ── expanded details ── */
+    .r12-eng-details {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.42s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    }
+    .r12-eng-card.r12-expanded .r12-eng-details {
+      max-height: 600px;
+      opacity: 1;
+    }
+    .r12-eng-details-inner {
+      padding: 1rem 1.4rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      border-top: 1px solid rgba(200,169,110,0.1);
+    }
+    .r12-eng-desc {
+      font-size: 0.76rem;
+      color: rgba(240,237,232,0.58);
+      line-height: 1.7;
+    }
+    .r12-eng-impact-label {
+      display: block;
+      font-family: var(--r12-font);
+      font-size: 0.5rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--r12-gold);
+      opacity: 0.6;
+      margin-bottom: 0.3rem;
+    }
+    .r12-eng-impact-text {
+      font-size: 0.73rem;
+      color: rgba(240,237,232,0.45);
+      line-height: 1.6;
     }
 
     /* ── PRODUCTS ── */
@@ -735,7 +876,7 @@
     .r12-section-sub { opacity: 0; }
 
     .r12-diff-card { opacity: 0; }
-    .r12-pt-row { opacity: 0; }
+    .r12-eng-card { opacity: 0; }
     .r12-product-card { opacity: 0; }
     .r12-leader-card { opacity: 0; }
     .r12-contact-block { opacity: 0; }
@@ -755,6 +896,7 @@
     @media (max-width: 1024px) {
       .r12-services-grid { grid-template-columns: repeat(2, 1fr); }
       .r12-diff-grid { grid-template-columns: repeat(2, 1fr); }
+      .r12-eng-grid { grid-template-columns: repeat(2, 1fr); }
       .r12-product-grid { grid-template-columns: 1fr; }
       .r12-contact-grid { grid-template-columns: 1fr; }
       .r12-footer-inner { grid-template-columns: 1fr 1fr; }
@@ -778,8 +920,7 @@
       .r12-diff-text { text-align: left; }
       .r12-diff-card { padding: 1.5rem; }
       .r12-leaders-grid { grid-template-columns: 1fr; }
-      .r12-pt-row { grid-template-columns: 1fr; gap: 0.75rem; }
-      .r12-pt-type, .r12-pt-outcome { display: none; }
+      .r12-eng-grid { grid-template-columns: 1fr; gap: 1rem; }
       .r12-product-grid { grid-template-columns: 1fr; }
       .r12-product-card { padding: 2rem 1.5rem; }
       .r12-form-row { grid-template-columns: 1fr; }
@@ -979,43 +1120,307 @@
         <h2 class="r12-section-title">Selected Engagements</h2>
         <p class="r12-section-sub">A sample of client work across forensics, security assessment, and product development.</p>
       </div>
-      <div class="r12-projects-table">
-        <div class="r12-pt-row">
-          <p class="r12-pt-type">DFIR</p>
-          <p class="r12-pt-work">Forensic investigation and multi-method data recovery following ransomware encrypting all critical business data.</p>
-          <p class="r12-pt-impact">Restored operational continuity; hardened endpoint protection, backup architecture and access controls.</p>
-          <p class="r12-pt-outcome">87% recovery</p>
+      <div class="r12-eng-grid">
+
+        <div class="r12-eng-card">
+          <div class="r12-eng-summary">
+            <div class="r12-eng-header">
+              <span class="r12-eng-type">DFIR</span>
+              <span class="r12-eng-toggle"></span>
+            </div>
+            <h3 class="r12-eng-title">Data Recovery Following Ransomware Incident</h3>
+            <div class="r12-eng-meta">
+              <p class="r12-eng-client">Classified Private Entity</p>
+              <span class="r12-eng-metric">87% recovery</span>
+            </div>
+          </div>
+          <div class="r12-eng-details">
+            <div class="r12-eng-details-inner">
+              <p class="r12-eng-desc">Forensic investigation and multi-method data recovery following a ransomware attack encrypting critical CAD files, production schedules, customer records, and financial documents. Included ransomware behavior analysis, shadow copy and SQL transaction log recovery, and network segmentation implementation.</p>
+              <div>
+                <span class="r12-eng-impact-label">Impact</span>
+                <p class="r12-eng-impact-text">~87% overall recovery (94–99% of business-critical files); restored operational continuity; deployed robust endpoint protection, backup architecture, and access controls.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="r12-pt-row">
-          <p class="r12-pt-type">DFIR</p>
-          <p class="r12-pt-work">Recovery from a mechanically failed 2TB HDD — source code, design assets, financials and 14 active client projects.</p>
-          <p class="r12-pt-impact">Full restoration of all critical business files; improved backup architecture and cloud integration.</p>
-          <p class="r12-pt-outcome">94% recovery</p>
+
+        <div class="r12-eng-card">
+          <div class="r12-eng-summary">
+            <div class="r12-eng-header">
+              <span class="r12-eng-type">DFIR</span>
+              <span class="r12-eng-toggle"></span>
+            </div>
+            <h3 class="r12-eng-title">Data Recovery Following Hardware Failure Incident</h3>
+            <div class="r12-eng-meta">
+              <p class="r12-eng-client">IT Services Firm · via Alien Fox Technologies</p>
+              <span class="r12-eng-metric">94% recovery</span>
+            </div>
+          </div>
+          <div class="r12-eng-details">
+            <div class="r12-eng-details-inner">
+              <p class="r12-eng-desc">Professional data recovery from a mechanically failed 2TB external HDD. Involved physical drive stabilization, forensic imaging, NTFS and MFT reconstruction, advanced file carving, and database and source code recovery with forensic chain-of-custody preservation.</p>
+              <div>
+                <span class="r12-eng-impact-label">Impact</span>
+                <p class="r12-eng-impact-text">~94% of total data recovered; full restoration of all critical business files including 14 active client projects; enhanced backup architecture and cloud integration.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="r12-pt-row">
-          <p class="r12-pt-type">VAPT</p>
-          <p class="r12-pt-work">OWASP Top 10 assessment of a government-facing web application — authenticated and unauthenticated testing.</p>
-          <p class="r12-pt-impact">Critical and medium-risk findings patched; strengthened authentication, session controls and compliance posture.</p>
-          <p class="r12-pt-outcome">Critical CVEs</p>
+
+        <div class="r12-eng-card">
+          <div class="r12-eng-summary">
+            <div class="r12-eng-header">
+              <span class="r12-eng-type">VAPT</span>
+              <span class="r12-eng-toggle"></span>
+            </div>
+            <h3 class="r12-eng-title">Vulnerability Assessment &amp; Penetration Testing</h3>
+            <div class="r12-eng-meta">
+              <p class="r12-eng-client">Classified Government Entity</p>
+              <span class="r12-eng-metric">Critical CVEs</span>
+            </div>
+          </div>
+          <div class="r12-eng-details">
+            <div class="r12-eng-details-inner">
+              <p class="r12-eng-desc">Full-scope VAPT of a government-facing web portal — identified blind SQL injection in a search parameter, session fixation allowing account takeover post-login, insecure direct object references exposing citizen records, and a reflected XSS bypassing existing WAF filters via UTF-7 encoding.</p>
+              <div>
+                <span class="r12-eng-impact-label">Impact</span>
+                <p class="r12-eng-impact-text">3 critical findings (SQLi, session fixation, IDOR) and 5 medium-risk issues remediated; WAF rules hardened; authentication flow redesigned; regulatory compliance posture significantly improved.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="r12-pt-row">
-          <p class="r12-pt-type">Secure AI</p>
-          <p class="r12-pt-work">On-premises LLM infrastructure for a law firm — RBAC, per-client encryption, air-gapped operation, RAG from matter-scoped repositories.</p>
-          <p class="r12-pt-impact">AI productivity without compromising attorney-client privilege or data sovereignty.</p>
-          <p class="r12-pt-outcome">Zero cloud</p>
+
+        <div class="r12-eng-card">
+          <div class="r12-eng-summary">
+            <div class="r12-eng-header">
+              <span class="r12-eng-type">VAPT</span>
+              <span class="r12-eng-toggle"></span>
+            </div>
+            <h3 class="r12-eng-title">Vulnerability Assessment &amp; Penetration Testing</h3>
+            <div class="r12-eng-meta">
+              <p class="r12-eng-client">Classified Technology Firm</p>
+              <span class="r12-eng-metric">Critical CVEs</span>
+            </div>
+          </div>
+          <div class="r12-eng-details">
+            <div class="r12-eng-details-inner">
+              <p class="r12-eng-desc">In-depth VAPT of a SaaS web platform — uncovered CVE-class vulnerabilities including unauthenticated IDOR exposing user records, stored XSS in a public-facing input with no output encoding, broken access control allowing horizontal privilege escalation, and JWT algorithm confusion enabling token forgery.</p>
+              <div>
+                <span class="r12-eng-impact-label">Impact</span>
+                <p class="r12-eng-impact-text">4 critical and 6 medium-risk findings remediated; IDOR patched within 48 hrs; JWT implementation hardened; secure coding standards adopted across the engineering team.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="r12-pt-row">
-          <p class="r12-pt-type">Product Dev</p>
-          <p class="r12-pt-work">Centralized multi-branch inventory and billing platform for Ultra Dimensions (Maguva) — automated SKU reconciliation, GST-compliant invoicing.</p>
-          <p class="r12-pt-impact">Eliminated billing discrepancies; unified financial governance with dashboard-driven analytics.</p>
-          <p class="r12-pt-outcome">Ultra Dimensions</p>
+
+        <div class="r12-eng-card">
+          <div class="r12-eng-summary">
+            <div class="r12-eng-header">
+              <span class="r12-eng-type">Product Dev</span>
+              <span class="r12-eng-toggle"></span>
+            </div>
+            <h3 class="r12-eng-title">Cybersecurity Platform MVP — UI/UX &amp; Secure Backend</h3>
+            <div class="r12-eng-meta">
+              <p class="r12-eng-client">China-based Stealth Startup</p>
+              <span class="r12-eng-metric">Production-ready</span>
+            </div>
+          </div>
+          <div class="r12-eng-details">
+            <div class="r12-eng-details-inner">
+              <p class="r12-eng-desc">Full MVP for a compliance-driven cybersecurity platform — complete frontend implementation, multi-cloud account integration (AWS/Azure/GCP), secure backend API, reusable component library, policy summary dashboard, and complete IP rights transfer.</p>
+              <div>
+                <span class="r12-eng-impact-label">Impact</span>
+                <p class="r12-eng-impact-text">Enabled rapid market entry with a production-ready platform and a scalable technical foundation for compliance automation.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="r12-pt-row">
-          <p class="r12-pt-type">Product Dev</p>
-          <p class="r12-pt-work">Full MVP for a compliance-driven cybersecurity platform — multi-cloud integration (AWS/Azure/GCP) and secure backend.</p>
-          <p class="r12-pt-impact">Production-ready platform enabling rapid market entry; full IP transfer to client.</p>
-          <p class="r12-pt-outcome">Stealth Startup</p>
+
+        <div class="r12-eng-card">
+          <div class="r12-eng-summary">
+            <div class="r12-eng-header">
+              <span class="r12-eng-type">IoT Security</span>
+              <span class="r12-eng-toggle"></span>
+            </div>
+            <h3 class="r12-eng-title">IoT Thermostat Reverse Engineering &amp; Security</h3>
+            <div class="r12-eng-meta">
+              <p class="r12-eng-client">Biocon</p>
+              <span class="r12-eng-metric">Hardened</span>
+            </div>
+          </div>
+          <div class="r12-eng-details">
+            <div class="r12-eng-details-inner">
+              <p class="r12-eng-desc">Comprehensive security assessment and hardening of industrial IoT thermostat systems through advanced reverse engineering — firmware extraction and analysis, proprietary protocol discovery, exploit surface mapping, and secure firmware update pathway establishment.</p>
+              <div>
+                <span class="r12-eng-impact-label">Impact</span>
+                <p class="r12-eng-impact-text">Transformed a vulnerable proprietary system into a hardened, standards-compliant solution with a fully documented security posture.</p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="r12-eng-card">
+          <div class="r12-eng-summary">
+            <div class="r12-eng-header">
+              <span class="r12-eng-type">Gov Advisory</span>
+              <span class="r12-eng-toggle"></span>
+            </div>
+            <h3 class="r12-eng-title">Strategic Security Support — Government Stakeholder</h3>
+            <div class="r12-eng-meta">
+              <p class="r12-eng-client">Saudi Government · via Law Office Engagement</p>
+              <span class="r12-eng-metric">Gov-level</span>
+            </div>
+          </div>
+          <div class="r12-eng-details">
+            <div class="r12-eng-details-inner">
+              <p class="r12-eng-desc">Strategic technical security support delivered to a government stakeholder in collaboration with legal counsel — secure document handling protocols, evidence integrity pipeline, hardened collaboration channels, comprehensive threat modeling, and incident-readiness runbooks.</p>
+              <div>
+                <span class="r12-eng-impact-label">Impact</span>
+                <p class="r12-eng-impact-text">Addressed high-sensitivity operational requirements; strengthened threat modeling and incident readiness for a government-level engagement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r12-eng-card">
+          <div class="r12-eng-summary">
+            <div class="r12-eng-header">
+              <span class="r12-eng-type">Secure AI</span>
+              <span class="r12-eng-toggle"></span>
+            </div>
+            <h3 class="r12-eng-title">Local-Hosted Secure AI Chat System</h3>
+            <div class="r12-eng-meta">
+              <p class="r12-eng-client">Law Office of Steven A. Feldman &amp; Associates, PLLC</p>
+              <span class="r12-eng-metric">Zero cloud</span>
+            </div>
+          </div>
+          <div class="r12-eng-details">
+            <div class="r12-eng-details-inner">
+              <p class="r12-eng-desc">On-premises LLM infrastructure designed for absolute data sovereignty — RBAC, multi-tenant isolation, per-client encryption keys, RAG from matter-scoped repositories, comprehensive audit trails, and air-gapped operation capability.</p>
+              <div>
+                <span class="r12-eng-impact-label">Impact</span>
+                <p class="r12-eng-impact-text">Enabled AI-powered productivity without compromising attorney-client privilege or sensitive client data.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r12-eng-card">
+          <div class="r12-eng-summary">
+            <div class="r12-eng-header">
+              <span class="r12-eng-type">Secure AI</span>
+              <span class="r12-eng-toggle"></span>
+            </div>
+            <h3 class="r12-eng-title">Secure Meeting Intelligence System</h3>
+            <div class="r12-eng-meta">
+              <p class="r12-eng-client">Law Office (Confidential)</p>
+              <span class="r12-eng-metric">Privacy-first</span>
+            </div>
+          </div>
+          <div class="r12-eng-details">
+            <div class="r12-eng-details-inner">
+              <p class="r12-eng-desc">Local-first meeting capture solution with enterprise-grade privacy controls — WhisperX transcription with speaker diarization, automatic task extraction, privacy-by-design architecture, encryption at rest and in transit, and zero cloud dependency.</p>
+              <div>
+                <span class="r12-eng-impact-label">Impact</span>
+                <p class="r12-eng-impact-text">Captured critical meeting intelligence while maintaining strict confidentiality requirements and data localization policies.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r12-eng-card">
+          <div class="r12-eng-summary">
+            <div class="r12-eng-header">
+              <span class="r12-eng-type">Legal AI</span>
+              <span class="r12-eng-toggle"></span>
+            </div>
+            <h3 class="r12-eng-title">AI-Assisted Billing &amp; Activity Integrity System</h3>
+            <div class="r12-eng-meta">
+              <p class="r12-eng-client">Law Office of Steven A. Feldman &amp; Associates, PLLC</p>
+              <span class="r12-eng-metric">–70% overhead</span>
+            </div>
+          </div>
+          <div class="r12-eng-details">
+            <div class="r12-eng-details-inner">
+              <p class="r12-eng-desc">Automated UTBMS-compliant time entry generation with intelligent cross-referencing of evidence identifiers, docket event correlation, pre-submission inconsistency flagging, and fully local AI deployment.</p>
+              <div>
+                <span class="r12-eng-impact-label">Impact</span>
+                <p class="r12-eng-impact-text">Reduced time-entry overhead by 70% while ensuring billing accuracy and evidentiary integrity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r12-eng-card">
+          <div class="r12-eng-summary">
+            <div class="r12-eng-header">
+              <span class="r12-eng-type">Product Dev</span>
+              <span class="r12-eng-toggle"></span>
+            </div>
+            <h3 class="r12-eng-title">Enterprise Inventory &amp; Billing Management System</h3>
+            <div class="r12-eng-meta">
+              <p class="r12-eng-client">Ultra Dimensions Group</p>
+              <span class="r12-eng-metric">Multi-branch</span>
+            </div>
+          </div>
+          <div class="r12-eng-details">
+            <div class="r12-eng-details-inner">
+              <p class="r12-eng-desc">Centralized multi-branch inventory and billing platform — automated SKU reconciliation, GST-compliant invoicing, threshold-based restock alerts, supplier mapping, role-based billing workflows, and dashboard-driven analytics for sales, shrinkage, and fulfillment.</p>
+              <div>
+                <span class="r12-eng-impact-label">Impact</span>
+                <p class="r12-eng-impact-text">Eliminated billing discrepancies; ensured regulatory compliance; unified financial governance across distributed retail outlets.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r12-eng-card">
+          <div class="r12-eng-summary">
+            <div class="r12-eng-header">
+              <span class="r12-eng-type">Legal AI</span>
+              <span class="r12-eng-toggle"></span>
+            </div>
+            <h3 class="r12-eng-title">AI-Powered Legal Forensic Intelligence Assistant</h3>
+            <div class="r12-eng-meta">
+              <p class="r12-eng-client">Law Office of Steven A. Feldman &amp; Associates, PLLC</p>
+              <span class="r12-eng-metric">Case intelligence</span>
+            </div>
+          </div>
+          <div class="r12-eng-details">
+            <div class="r12-eng-details-inner">
+              <p class="r12-eng-desc">Sophisticated forensic assistant ingesting communications, documents, and exhibits — advanced entity correlation, dynamic relationship graph rendering, automated anomaly detection, ML reasoning engine, and complete evidence trail documentation.</p>
+              <div>
+                <span class="r12-eng-impact-label">Impact</span>
+                <p class="r12-eng-impact-text">Dramatically reduced case preparation time while improving evidence correlation accuracy and litigation strategy development.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r12-eng-card">
+          <div class="r12-eng-summary">
+            <div class="r12-eng-header">
+              <span class="r12-eng-type">Legal AI</span>
+              <span class="r12-eng-toggle"></span>
+            </div>
+            <h3 class="r12-eng-title">UTBMS Automation: WhatsApp to Court-Submission Pipeline</h3>
+            <div class="r12-eng-meta">
+              <p class="r12-eng-client">Law Office of Steven A. Feldman &amp; Associates, PLLC</p>
+              <span class="r12-eng-metric">Auto-submission</span>
+            </div>
+          </div>
+          <div class="r12-eng-details">
+            <div class="r12-eng-details-inner">
+              <p class="r12-eng-desc">Local-hosted AI pipeline converting WhatsApp communications into court-ready exhibits with full UTBMS compliance — automated de-duplication, timestamp normalization, sender validation, message-to-matter mapping, and searchable document bundle generation.</p>
+              <div>
+                <span class="r12-eng-impact-label">Impact</span>
+                <p class="r12-eng-impact-text">Transformed days of manual exhibit preparation into automated, standardized court submissions while maintaining evidentiary standards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1152,6 +1557,15 @@
     </div>
   </footer>
 
+  <script>
+    document.querySelectorAll('.r12-eng-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const isOpen = card.classList.contains('r12-expanded');
+        document.querySelectorAll('.r12-eng-card.r12-expanded').forEach(c => c.classList.remove('r12-expanded'));
+        if (!isOpen) card.classList.add('r12-expanded');
+      });
+    });
+  </script>
   <script src="../js/pages.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js"></script>
